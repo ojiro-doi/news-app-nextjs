@@ -1,11 +1,27 @@
-import { Meta } from "@storybook/react";
-import Circle from "./Circle";
+import { Meta } from '@storybook/react';
+import Circle from './Circle';
 
 const meta: Meta<typeof Circle> = {
   component: Circle,
-  title: "Circle",
+  title: 'Circle',
 };
 
-export default meta; 
+export default meta;
 
-export const BaseCircle = {};
+export const BaseCircle = {
+  args: {
+    variant: 'orange',
+  },
+};
+
+export const GreenCircle = {
+  args: {
+    variant: 'green',
+  },
+};
+
+export const YellowCircle = {
+  args: {
+    variant: 'yellow',
+  },
+};

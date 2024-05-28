@@ -1,9 +1,15 @@
-version: "3.9"
+version: '3.8'
+
 services:
   app:
-    build: .
+    build:
+      context: .
+    tty: true
     volumes:
-      - .:/src/app
+      - .:/app
+      - /app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true
+    command: sh -c "npm run dev"
     ports:
       - "3000:3000"
-    command: npm run dev
