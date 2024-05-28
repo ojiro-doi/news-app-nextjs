@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const AppName: Story = {
+export const AppButtonBase: Story = {
 
 };
 
