@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Props from '../../types';
 
 const ArticleCard = ({article}: Props) => {
@@ -12,7 +11,7 @@ const ArticleCard = ({article}: Props) => {
           rel="noopener noreferrer"
           className="flex items-center p-2 rounded-md border my-4 bg-black"
         >
-          <Image src={article.urlToImage} alt={article.title} width={48} height={48} className="object-cover mr-4" />
+          <img src={article.urlToImage} alt={article.title} width={48} height={48} className="object-cover mr-4" />
           <div className="flex flex-col">
             <h4 className="text-xs text-white">{article.title}</h4>
           </div>

@@ -3,7 +3,7 @@ import ArticleList from './ArticleList';
 
 const meta: Meta<typeof ArticleList> = {
   component: ArticleList,
-  title: 'molecules/ArticleList',
+  title: 'organisms/ArticleList',
   tags: ['autodocs'],
 };
 
