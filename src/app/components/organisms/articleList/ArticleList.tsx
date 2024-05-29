@@ -4,8 +4,8 @@ import ArticleCard from '../../molecules/articleCard/ArticleCard';
 
 const ArticleList = ({ articles, keyword }: Props) => {
   return (
-    <div>
-      <h2 className="text-black font-bold">{(keyword ?? '').charAt(0).toUpperCase() + (keyword ?? '').slice(1)}</h2>
+    <div className=''>
+      <h2 className="text-black font-bold text-lg">{(keyword ?? '').charAt(0).toUpperCase() + (keyword ?? '').slice(1)}</h2>
       <ul className="h-full">
         {articles &&
           articles.map((article, index) => (
