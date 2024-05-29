@@ -1,16 +1,16 @@
 import React from 'react';
 import Props from '../../types';
-import ArticleLink from '../../atoms/articleLink/ArticleLink';
+import ArticleCard from '../../molecules/articleCard/ArticleCard';
 
-const ArticleCard = ({ articles, title, keyword }: Props) => {
+const ArticleList = ({ articles, keyword }: Props) => {
   return (
     <div>
-      <h2 className="text-white font-bold">{(keyword ?? '').charAt(0).toUpperCase() + (keyword ?? '').slice(1)} News</h2>
+      <h2 className="text-black font-bold">{(keyword ?? '').charAt(0).toUpperCase() + (keyword ?? '').slice(1)}</h2>
       <ul className="h-full">
         {articles &&
           articles.map((article, index) => (
             <li key={index}>
-              <ArticleLink article={article} /> 
+              <ArticleCard article={article} /> 
             </li>
           ))}
       </ul>
@@ -18,4 +18,4 @@ const ArticleCard = ({ articles, title, keyword }: Props) => {
   );
 };
 
-export default ArticleCard;
+export default ArticleList;

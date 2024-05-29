@@ -9,7 +9,7 @@ type Article = {
 type Props = {
   articles?: Article[];
   article?: Article;
-  title?: string;
+  // title?: string;
   weatherNews?: {
     current: {
       temp: number;

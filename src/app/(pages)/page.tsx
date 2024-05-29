@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import fetchNews from '../lib/api';
 
@@ -7,12 +8,16 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const topArticle = await fetchNews();
-      setArticles(topArticle.props.topArticles);
+      setArticles(topArticle.props.topArticle);
+      console.log("top",topArticle.props.topArticle)
     };
 
     fetchData();
-    console.log(articles);
   }, []);
+
+  useEffect(() => {
+    console.log(articles);
+  }, [articles]);
   
   return (
     <main>
