@@ -3,7 +3,7 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { MdDirectionsBike } from 'react-icons/md';
 
-type SidenavProps = {
+type SideNavProps = {
   /**
    * ボタンの選択状態
    */
@@ -13,7 +13,7 @@ type SidenavProps = {
   topic: 'sports';
 };
 
-const SidenavButton = ({ onClick, icon, themeColor, topic }: SidenavProps) => {
+const SideNavButton = ({ onClick, icon, themeColor, topic }: SideNavProps) => {
   let iconSelect;
   switch (icon) {
     case 'sports':
@@ -36,4 +36,4 @@ const SidenavButton = ({ onClick, icon, themeColor, topic }: SidenavProps) => {
   );
 };
 
-export default SidenavButton;
+export default SideNavButton;

@@ -1,14 +1,14 @@
 import React from 'react';
 import ArticleList from '../organisms/articleList/ArticleList';
 import Header from '../organisms/header/Header';
-import Sidenav from '../organisms/sidenav/Sidenav';
+import SideNav from '../organisms/sidenav/Sidenav';
 import Props from '../types';
 
 const DefaultLayout = ({articles,keyword}:Props) => {
   return (
     <div>
       {/* <Header /> */}
-      <Sidenav/>
+      <SideNav/>
       <ArticleList articles={articles} keyword={keyword}/>
     </div>
   );

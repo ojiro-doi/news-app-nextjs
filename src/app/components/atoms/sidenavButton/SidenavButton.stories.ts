@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import SidenavButton from './SidenavButton';
+import SideNavButton from './SideNavButton';
 
 /**
  * サイドナビゲーションのボタン
  */
-const meta: Meta<typeof SidenavButton> = {
-  component: SidenavButton,
-  title: 'atoms/SidenavButton',
+const meta: Meta<typeof SideNavButton> = {
+  component: SideNavButton,
+  title: 'atoms/SideNavButton',
   tags: ['autodocs'],
 };
 

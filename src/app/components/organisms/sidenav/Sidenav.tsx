@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Sidenav = () => {
+const SideNav = () => {
   return (
-    <div>Sidenav</div>
+    <div>SideNav</div>
   )
 }
 
-export default Sidenav
+export default SideNav
