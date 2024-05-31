@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import Props from '../../types';
+import Props from '../../../types/types';
 
 const ArticleCard = ({ article }: Props) => {
   const time = article ? moment(article.publishedAt).fromNow().slice(0, 1) : '';

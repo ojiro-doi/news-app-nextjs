@@ -1,15 +1,15 @@
 import React from 'react';
 import ArticleList from '../organisms/articleList/ArticleList';
 import Header from '../organisms/header/Header';
-import SideNav from '../organisms/sidenav/Sidenav';
-import Props from '../types';
+import SideNav from '../organisms/sidenav/SideNav';
+import Props from '../../types/types';
 
-const DefaultLayout = ({articles,keyword}:Props) => {
+const DefaultLayout = ({articles}:Props) => {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <SideNav/>
-      <ArticleList articles={articles} keyword={keyword}/>
+      <ArticleList articles={articles}/>
     </div>
   );
 };

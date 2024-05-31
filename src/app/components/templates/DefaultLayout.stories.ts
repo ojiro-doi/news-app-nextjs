@@ -21,7 +21,7 @@ export const DefaultLayoutBase: Story = {
       urlToImage: 'https://i.ytimg.com/vi/2y9RJ-VH7ak/maxresdefault.jpg',
       publishedAt: '2024-05-27T09:30:01Z',
     },
-    keyword: 'article',
+    topicTitle: 'article',
   },
 };
 

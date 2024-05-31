@@ -1,8 +1,11 @@
 import React from 'react'
+import SideVavList from '../../molecules/sideNavList/SideNavList'
 
 const SideNav = () => {
   return (
-    <div>SideNav</div>
+    <div>
+      <SideVavList />
+    </div>
   )
 }
 

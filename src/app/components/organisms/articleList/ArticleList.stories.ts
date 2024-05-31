@@ -31,7 +31,7 @@ export const ArticleListBase: Story = {
         publishedAt: '2024-05-27T09:33:00Z',
       },
     ],
-    keyword: 'article',
+    topicTitle: 'article',
   },
 };
 

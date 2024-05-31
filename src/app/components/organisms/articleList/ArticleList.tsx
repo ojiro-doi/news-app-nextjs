@@ -1,16 +1,19 @@
-import React from 'react';
-import Props from '../../types';
+import React, { useContext } from 'react';
+import Props from '../../../types/types';
 import ArticleCard from '../../molecules/articleCard/ArticleCard';
+import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 
-const ArticleList = ({ articles, keyword }: Props) => {
+const ArticleList = ({ articles}: Props) => {
+  const { topicTitle } = useContext(TopicTitleContext);
+
   return (
     <div className=''>
-      <h2 className="text-black font-bold text-lg">{(keyword ?? '').charAt(0).toUpperCase() + (keyword ?? '').slice(1)}</h2>
+      <h2 className="text-black font-bold text-lg">{(topicTitle ?? '').charAt(0).toUpperCase() + (topicTitle ?? '').slice(1)}</h2>
       <ul className="h-full">
         {articles &&
           articles.map((article, index) => (
             <li key={index}>
-              <ArticleCard article={article} /> 
+              <ArticleCard article={article}/> 
             </li>
           ))}
       </ul>

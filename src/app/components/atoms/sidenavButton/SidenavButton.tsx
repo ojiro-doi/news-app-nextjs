@@ -1,21 +1,19 @@
+import Props from '@/app/types/types';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import { IconContext } from 'react-icons';
 import { MdDirectionsBike } from 'react-icons/md';
 
-type SideNavProps = {
-  /**
-   * ボタンの選択状態
-   */
-  onClick: () => void;
-  icon: string;
-  themeColor: 'light' | 'dark';
-  topic: 'sports';
-};
+const SideNavButton = ({ path, title }: Props) => {
+  const { topicTitle,setTopicTitle } = useContext(TopicTitleContext);
 
-const SideNavButton = ({ onClick, icon, themeColor, topic }: SideNavProps) => {
+  if (!title) {
+    return null; // または適切な代替コンポーネントを返す
+  }
+
   let iconSelect;
-  switch (icon) {
+  switch (title) {
     case 'sports':
       iconSelect = <MdDirectionsBike />;
       break;
@@ -25,12 +23,18 @@ const SideNavButton = ({ onClick, icon, themeColor, topic }: SideNavProps) => {
   }
 
   return (
-    <button onClick={onClick} className="bg-blue-300 w-64 h-16 rounded-full ">
+    <button
+      onClick={() => {
+        setTopicTitle(title);
+        console.log('setTopicTitle',topicTitle);
+      }}
+      className="bg-blue-300 w-64 h-16 rounded-full "
+    >
       <div className="flex items-center ml-6">
-        <IconContext.Provider value={{ color: themeColor, size: '24' }}>
-          <Link href="/">{iconSelect}</Link>
+        <IconContext.Provider value={{ color: 'ffffff', size: '24' }}>
+          <Link href={`${path}`}>{iconSelect}</Link>
         </IconContext.Provider>
-        <h1 className="ml-4 text-base">{topic}</h1>
+        <h1 className="ml-4 text-base">{title}</h1>
       </div>
     </button>
   );
