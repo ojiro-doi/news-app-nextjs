@@ -14,7 +14,6 @@ type Story = StoryObj<typeof meta>;
 export const MenuButton: Story = {
   args: {
     icon: 'menu',
-    themeColor: 'light',
     onClick: () => {
       alert('menu button clicked');
     },
@@ -23,13 +22,11 @@ export const MenuButton: Story = {
 export const SearchButton: Story = {
   args: {
     icon: 'search',
-    themeColor: 'light',
   },
 };
 export const ThemeButton: Story = {
   args: {
     icon: 'theme',
-    themeColor: 'light'||'dark',
   },
 };
 
@@ -37,12 +34,12 @@ export const ThemeButton: Story = {
  * GroupedButton
  */
 
-export const GroupedButton: Story = {
-  render: () => (
-    <div>
-      <IconButton icon="menu" themeColor="light" onClick={() => {}} />
-      <IconButton icon="search" themeColor="light" onClick={() => {}} />
-      <IconButton icon="theme" themeColor="light" onClick={() => {}} />
-    </div>
-  ),
-};
+// export const GroupedButton: Story = {
+//   render: () => (
+//     <div>
+//       <IconButton icon="menu"  onClick={() => {}} />
+//       <IconButton icon="search" themeColor="light" onClick={() => {}} />
+//       <IconButton icon="theme" themeColor="light" onClick={() => {}} />
+//     </div>
+//   ),
+// };

@@ -1,8 +1,11 @@
 import React from 'react'
+import AppButton from '../../atoms/appButton/AppButton'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div>
+      <AppButton/>
+    </div>
   )
 }
 

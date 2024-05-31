@@ -1,4 +1,5 @@
-import React from 'react';
+import { ThemeColorContext } from '@/contexts/ThemeColor';
+import React, { useContext } from 'react';
 import { IconContext } from 'react-icons';
 import { FaSearch } from 'react-icons/fa'; //Searchアイコン
 import { FaBars } from 'react-icons/fa'; //Menuアイコン
@@ -9,10 +10,11 @@ import { IoMoon } from "react-icons/io5";
 type IconProps = {
   onClick: () => void;
   icon: 'menu' | 'search' | 'theme';
-  themeColor: 'light' | 'dark';
 };
 
-const IconButton = ({ onClick, icon,themeColor }: IconProps) => {
+const IconButton = ({ onClick, icon}: IconProps) => {
+  const {themeColor} = useContext(ThemeColorContext);
+
   let iconSelect, themeColorSelect;
 
   switch (icon) {

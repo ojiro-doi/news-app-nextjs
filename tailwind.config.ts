@@ -18,4 +18,18 @@ const config: Config = {
   },
   plugins: [],
 };
+
+// module.exports = {
+//   // 追加
+//   theme: {
+//     extend: {
+//       colors: {
+//         // 'カラー名': 'カラーコード'
+//         'light-blue': '#C4EBED',
+//         'light-gray': '#F5F8FC',
+//       },
+//     },
+//   },
+// };
+
 export default config;

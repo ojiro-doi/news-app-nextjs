@@ -4,7 +4,7 @@ import { TopicTitleProvider } from '../../contexts/TopicTitleContext';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body>
         <TopicTitleProvider >
           {/* グローバルなナビゲーションなどを配置 */}

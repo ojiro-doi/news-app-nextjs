@@ -1,12 +1,22 @@
-// import React from 'react'
-// import React, { createContext, useContext, useState } from "react";
+"use client"
+import React, { createContext, useState, ReactNode } from 'react';
 
-// const ThemeColor = () => {
-//   const {setThemeColor} = React.useContext(ThemeColor)
+type ThemeColorContextProps = {
+  themeColor: string;
+  setThemeColor: (title: string) => void;
+}
 
-//   return (
-//     <div>ThemeColor</div>
-//   )
-// }
+export const ThemeColorContext = createContext<ThemeColorContextProps>({
+  themeColor: 'light',
+  setThemeColor: () => {},
+});
 
-// export default ThemeColor
+export const ThemeColorProvider = ({ children }: { children: ReactNode }) => {
+  const [themeColor, setThemeColor] = useState<string>('Default Topic');
+
+  return (
+    <ThemeColorContext.Provider value={{ themeColor, setThemeColor }}>
+      {children}
+    </ThemeColorContext.Provider>
+  );
+};

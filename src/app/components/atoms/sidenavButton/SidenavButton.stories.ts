@@ -16,11 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const SportsButton: Story = {
   args: {
-    icon: 'sports',
-    themeColor: 'light',
-    topic: 'sports',
-    onClick: () => {
-      alert('menu button clicked');
+    path: '/topics/sports',
+    title: 'Sports',
     },
-  },
 };
