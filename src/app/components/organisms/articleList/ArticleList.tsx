@@ -7,7 +7,7 @@ const ArticleList = ({ articles}: Props) => {
   const { topicTitle } = useContext(TopicTitleContext);
 
   return (
-    <div className=''>
+    <div className='container mx-auto'>
       <h2 className="text-black font-bold text-lg">{(topicTitle ?? '').charAt(0).toUpperCase() + (topicTitle ?? '').slice(1)}</h2>
       <ul className="h-full">
         {articles &&

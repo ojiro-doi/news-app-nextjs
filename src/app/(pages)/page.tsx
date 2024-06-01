@@ -11,9 +11,9 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log('topicTitle', topicTitle);
       const articleData = await fetchNews({topicTitle});
       setArticles(articleData.props.articleData);
-      console.log('top', articleData.props.articleData);
     };
 
     fetchData();

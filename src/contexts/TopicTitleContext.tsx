@@ -7,12 +7,12 @@ type TopicTitleContextProps = {
 }
 
 export const TopicTitleContext = createContext<TopicTitleContextProps>({
-  topicTitle: 'Default Topic',
+  topicTitle: 'Headlines',
   setTopicTitle: () => {},
 });
 
 export const TopicTitleProvider = ({ children }: { children: ReactNode }) => {
-  const [topicTitle, setTopicTitle] = useState<string>('Default Topic');
+  const [topicTitle, setTopicTitle] = useState<string>('Headlines');
 
   return (
     <TopicTitleContext.Provider value={{ topicTitle, setTopicTitle }}>
