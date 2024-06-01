@@ -3,27 +3,29 @@ import ArticleList from '../organisms/articleList/ArticleList';
 import SideNav from '../organisms/sideNav/SideNav';
 import Props from '../../types/types';
 import Header from '../organisms/header/Header';
+import SidePanel from '../organisms/sidePanel/SidePanel';
 
 const DefaultLayout = ({ articles }: Props) => {
   return (
-    <div className="">
-      <header className='fixed top-0 w-full'>
+    <>
+      <header className="fixed top-0 w-full">
         <Header />
       </header>
-      <div className='flex bg-green-100 pt-16'>
-        <div className="fixed top-16 ">
+      <main className="pt-16">
+        <aside className="fixed top-16 ">
           <SideNav />
-        </div>
-        <div className="ml-72 container mx-auto">
-          <div>
+        </aside>
+        <div className="flex flex-1 ml-72 top-16 bg-green-200">
+          <div className="w-3/4">
             <ArticleList articles={articles} />
           </div>
-          <div>
-            
+          <div className="w-1/4">
+            <SidePanel />
           </div>
         </div>
-      </div>
-    </div>
+      </main>
+      <footer className=""></footer>
+    </>
   );
 };
 

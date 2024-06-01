@@ -18,6 +18,7 @@ const SideNavButton = ({ path, title }: Props) => {
     return null; // または適切な代替コンポーネントを返す
   }
 
+  // アイコンの設定
   let iconSelect;
   switch (title) {
     case 'Headlines':
@@ -54,32 +55,9 @@ const SideNavButton = ({ path, title }: Props) => {
       break;
   }
 
-  // ボタンカラーの設定
-  // let buttonColorSelect;
-  // switch (topicTitle) {
-  //   case 'Headlines':
-  //     buttonColorSelect = 'bg-cyan-100';
-  //     break;
-  //   case 'Business':
-  //     buttonColorSelect = 'bg-cyan-100';
-  //     break;
-  //   case 'Technology':
-  //     buttonColorSelect = 'bg-cyan-100';
-  //     break;
-  //   case 'Entertainment':
-  //     buttonColorSelect = 'bg-cyan-100';
-  //     break;
-  //   case 'Sports':
-  //     buttonColorSelect = 'bg-cyan-100';
-  //     break;
-  //   default:
-  //     buttonColorSelect = 'bg-gray-100';
-  //     break;
-  // }
-  // const buttonColorSelect = topicTitle === title ? 'bg-cyan-100' : 'bg-gray-100';
+  // 背景・hoverの色設定
   let bgColorSelect;
   let hoverColorSelect;
-
   switch (title) {
     case topicTitle:
       bgColorSelect = 'bg-sky-200';
@@ -92,20 +70,22 @@ const SideNavButton = ({ path, title }: Props) => {
   }
 
   return (
-    <button
-      onClick={() => {
-        setTopicTitle(title);
-        console.log('setTopicTitle', setTopicTitle);
-      }}
-      className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect}`}
-    >
-      <div className="flex items-center ml-6">
-        <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
-          <Link href={`${path}`}>{iconSelect}</Link>
-        </IconContext.Provider>
-        <h1 className="ml-4 text-base">{title}</h1>
-      </div>
-    </button>
+    <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
+      <button className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect}`}>
+        <Link
+          href={`${path}`}
+          onClick={() => {
+            setTopicTitle(title);
+            console.log('setTopicTitle', setTopicTitle);
+          }}
+        >
+          <div className="flex items-center ml-6">
+            {iconSelect}
+            <h1 className="ml-4 text-base">{title}</h1>
+          </div>
+        </Link>
+      </button>
+    </IconContext.Provider>
   );
 };
 

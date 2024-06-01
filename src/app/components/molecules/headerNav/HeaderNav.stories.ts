@@ -13,10 +13,10 @@ type Story = StoryObj<typeof meta>;
 
 export const HeaderNavBase: Story = {
   args: {
-    icon: 'menu',
-    onClick: () => {
-      alert('menu button clicked');
-    },
+    // icon: 'menu',
+    // onClick: () => {
+    //   alert('menu button clicked');
+    // },
   },
 };
 

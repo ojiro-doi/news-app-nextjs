@@ -4,11 +4,11 @@ import { TopicTitleProvider } from '../../contexts/TopicTitleContext';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
-      <body>
+    <html className='h-full'>
+      <body className='bg-slate-400'>
         <TopicTitleProvider>
           {/* ページ固有のコンテンツ */}
-          <main>{children}</main>
+          {children}
         </TopicTitleProvider>
       </body>
     </html>
