@@ -55,17 +55,39 @@ const SideNavButton = ({ path, title }: Props) => {
   }
 
   // ボタンカラーの設定
-  let buttonColorSelect;
-  switch (topicTitle) {
-    case 'Headlines':
-    case 'Business':
-    case 'Technology':
-    case 'Entertainment':
-    case 'Sports':
-      buttonColorSelect = 'bg-cyan-100';
+  // let buttonColorSelect;
+  // switch (topicTitle) {
+  //   case 'Headlines':
+  //     buttonColorSelect = 'bg-cyan-100';
+  //     break;
+  //   case 'Business':
+  //     buttonColorSelect = 'bg-cyan-100';
+  //     break;
+  //   case 'Technology':
+  //     buttonColorSelect = 'bg-cyan-100';
+  //     break;
+  //   case 'Entertainment':
+  //     buttonColorSelect = 'bg-cyan-100';
+  //     break;
+  //   case 'Sports':
+  //     buttonColorSelect = 'bg-cyan-100';
+  //     break;
+  //   default:
+  //     buttonColorSelect = 'bg-gray-100';
+  //     break;
+  // }
+  // const buttonColorSelect = topicTitle === title ? 'bg-cyan-100' : 'bg-gray-100';
+  let bgColorSelect;
+  let hoverColorSelect;
+
+  switch (title) {
+    case topicTitle:
+      bgColorSelect = 'bg-sky-200';
+      hoverColorSelect = 'hover:bg-sky-200';
       break;
     default:
-      buttonColorSelect = 'bg-gray-100';
+      bgColorSelect = 'bg-gray-100';
+      hoverColorSelect = 'hover:bg-gray-200';
       break;
   }
 
@@ -73,9 +95,9 @@ const SideNavButton = ({ path, title }: Props) => {
     <button
       onClick={() => {
         setTopicTitle(title);
-        console.log('setTopicTitle', topicTitle);
+        console.log('setTopicTitle', setTopicTitle);
       }}
-      className={`${buttonColorSelect} w-64 h-16 rounded-full hover:bg-gray-200`}
+      className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect}`}
     >
       <div className="flex items-center ml-6">
         <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
