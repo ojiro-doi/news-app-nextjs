@@ -1,7 +1,7 @@
 import React from 'react';
 import ArticleList from '../organisms/articleList/ArticleList';
 import Header from '../organisms/header/Header';
-import SideNav from '../organisms/sidenav/SideNav';
+import SideNav from '../organisms/sideNav/SideNav';
 import Props from '../../types/types';
 
 const DefaultLayout = ({articles}:Props) => {

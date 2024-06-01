@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import fetchNews from '../lib/api';
+import fetchNews from '../api/api';
 import DefaultLayout from '../components/templates/DefaultLayout';
 
 export default function Home() {

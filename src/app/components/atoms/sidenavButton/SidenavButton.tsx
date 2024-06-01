@@ -3,25 +3,40 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import { IconContext } from 'react-icons';
-import { MdDirectionsBike } from 'react-icons/md';
 import { ThemeColorContext } from '@/contexts/ThemeColor';
+import { AiOutlineGlobal } from 'react-icons/ai'; //headlines
+import { IoBusiness } from 'react-icons/io5'; //business
+import { MdOutlineScience } from 'react-icons/md'; //technology
+import { BiSlideshow } from 'react-icons/bi'; //entertainment
+import { MdDirectionsBike } from 'react-icons/md'; //sports
 
 const SideNavButton = ({ path, title }: Props) => {
-  const { topicTitle,setTopicTitle } = useContext(TopicTitleContext);
-  const {themeColor} = useContext(ThemeColorContext);
+  const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
+  const { themeColor } = useContext(ThemeColorContext);
 
   if (!title) {
     return null; // または適切な代替コンポーネントを返す
   }
 
-  // アイコンの設定
   let iconSelect;
   switch (title) {
-    case 'sports':
+    case 'Headlines':
+      iconSelect = <AiOutlineGlobal />;
+      break;
+    case 'Business':
+      iconSelect = <IoBusiness />;
+      break;
+    case 'Technology':
+      iconSelect = <MdOutlineScience />;
+      break;
+    case 'Entertainment':
+      iconSelect = <BiSlideshow />;
+      break;
+    case 'Sports':
       iconSelect = <MdDirectionsBike />;
       break;
     default:
-      iconSelect = <MdDirectionsBike />;
+      iconSelect = <AiOutlineGlobal />;
       break;
   }
 
@@ -29,24 +44,28 @@ const SideNavButton = ({ path, title }: Props) => {
   let themeColorSelect;
   switch (themeColor) {
     case 'light':
-      themeColorSelect='#000000';
+      themeColorSelect = '#000000';
       break;
     case 'dark':
-      themeColorSelect='#ffffff';
+      themeColorSelect = '#ffffff';
       break;
     default:
-      themeColorSelect='#000000';
+      themeColorSelect = '#000000';
       break;
   }
 
   // ボタンカラーの設定
   let buttonColorSelect;
-  switch (title) {
+  switch (topicTitle) {
+    case 'Headlines':
+    case 'Business':
+    case 'Technology':
+    case 'Entertainment':
     case 'Sports':
       buttonColorSelect = 'bg-cyan-100';
       break;
     default:
-      buttonColorSelect = 'bg-gray-200';
+      buttonColorSelect = 'bg-gray-100';
       break;
   }
 
@@ -54,9 +73,9 @@ const SideNavButton = ({ path, title }: Props) => {
     <button
       onClick={() => {
         setTopicTitle(title);
-        console.log('setTopicTitle',topicTitle);
+        console.log('setTopicTitle', topicTitle);
       }}
-      className={`${buttonColorSelect} w-64 h-16 rounded-full `}
+      className={`${buttonColorSelect} w-64 h-16 rounded-full hover:bg-gray-200`}
     >
       <div className="flex items-center ml-6">
         <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>

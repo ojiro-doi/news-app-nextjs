@@ -1,11 +1,10 @@
 import React from 'react';
-import SideNavButton from '../../atoms/sidenavButton/SideNavButton';
-
+import SideNavButton from '../../atoms/sideNavButton/SideNavButton';
 
 const SideNavTopics = [
   {
     path: "/",
-    title: "Top stories",
+    title: "Headlines",
   },
   {
     path: "/topics/business",
@@ -28,7 +27,7 @@ const SideNavTopics = [
 const SideNavList = () => {
   return (
     <div>
-      <ul>
+      <ul className='py-4 px-4'>
         {SideNavTopics.map((sideNavTopic, index) => {
             return (
               <li key={index}>

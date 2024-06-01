@@ -14,9 +14,18 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const SportsButton: Story = {
+export const ThemeLight: Story = {
   args: {
     path: '/topics/sports',
     title: 'Sports',
+    themeColor: 'light',
+    },
+};
+
+export const ThemeDark: Story = {
+  args: {
+    path: '/topics/sports',
+    title: 'Sports',
+    themeColor: 'dark',
     },
 };

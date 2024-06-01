@@ -3,7 +3,7 @@ import SideVavList from '../../molecules/sideNavList/SideNavList'
 
 const SideNav = () => {
   return (
-    <div>
+    <div className='bg-orange-200 w-72 '>
       <SideVavList />
     </div>
   )
