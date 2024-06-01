@@ -3,7 +3,7 @@ import AppButton from '../../atoms/appButton/AppButton'
 
 const Header = () => {
   return (
-    <div>
+    <div className='bg-amber-600 h-16 '>
       <AppButton/>
     </div>
   )

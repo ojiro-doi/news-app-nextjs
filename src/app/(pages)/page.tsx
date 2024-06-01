@@ -21,9 +21,8 @@ export default function Home() {
   }, [articles]);
 
   return (
-    <main>
-      <h1 className="text-3xl text-red-300">Home</h1>
+    <>
       <DefaultLayout articles={articles} />
-    </main>
+    </>
   );
 }

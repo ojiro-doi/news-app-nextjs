@@ -15,11 +15,11 @@ const ArticleCard = ({ article }: Props) => {
         >
           <div className="mx-2">
             <p className="text-xs text-white">{article.title}</p>
-            <p className="text-xs text-gray-400">
-              {time}時間前
-            </p>
+            <p className="text-xs text-gray-400">{time}時間前</p>
           </div>
-          <img src={article.urlToImage} alt={article.title} className="w-12 h-12 object-cover" />
+          <div className=''>
+            <img src={article.urlToImage} alt={article.title} className="w-12 h-12 object-cover rounded-md" />
+          </div>
         </a>
       )}
     </div>
