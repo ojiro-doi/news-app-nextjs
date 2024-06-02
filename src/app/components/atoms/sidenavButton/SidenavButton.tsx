@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import { IconContext } from 'react-icons';
-import { ThemeColorContext } from '@/contexts/ThemeColor';
+import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import { AiOutlineGlobal } from 'react-icons/ai'; //headlines
 import { IoBusiness } from 'react-icons/io5'; //business
 import { MdOutlineScience } from 'react-icons/md'; //technology

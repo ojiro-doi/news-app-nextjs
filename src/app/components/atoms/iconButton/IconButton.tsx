@@ -1,4 +1,4 @@
-import { ThemeColorContext } from '@/contexts/ThemeColor';
+import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import React, { useContext } from 'react';
 import { IconContext } from 'react-icons';
 import { FaSearch } from 'react-icons/fa'; //Searchアイコン
@@ -19,26 +19,26 @@ const IconButton = ({ onClick, icon}: IconProps) => {
 
   switch (icon) {
     case 'menu':
-      iconSelect = <FaBars />;
+      iconSelect = <FaBars data-testid="icon" />;
       break;
     case 'search':
-      iconSelect = <FaSearch />;
+      iconSelect = <FaSearch data-testid="icon" />;
       break;
     case 'theme':
       switch (themeColor) {
         case 'light':
-          iconSelect = <IoMoon />;
+          iconSelect = <IoMoon data-testid="icon" />;
           break;
         case 'dark':
-          iconSelect = <IoSunnyOutline />;
+          iconSelect = <IoSunnyOutline data-testid="icon" />;
           break;
         default:
-          iconSelect = <IoMoon />;
+          iconSelect = <IoMoon data-testid="icon" />;
           break;
       }
       break;
     default:
-      iconSelect = <FaBars />;
+      iconSelect = null;
       break;
   }
 
