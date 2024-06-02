@@ -8,40 +8,41 @@ type Article = {
 type Props = {
   articles?: Article[];
   article?: Article;
-  // title?: string;
-  weatherNews?: {
+  weather?: {
     current: {
-      temp: number;
-      clouds: number;
-      weather: [
-        conditions: {
-          main: string;
-          icon: string;
+      temp_c: number;
+      condition: {
+        icon: string;
+        text: string;
+      };
+    };
+    forecast: {
+      forecastday: [
+        {
+          date: string;
+          day: {
+            maxtemp_c: number;
+            mintemp_c: number;
+            avgtemp_c: number;
+            condition: {
+              icon: string;
+              text: string;
+            };
+          };
         },
       ];
     };
-    daily: [
-      date: {
-        dt: number;
-        clouds: number;
-        temp: {
-          min: number;
-          max: number;
-        };
-        weather: [
-          conditions: {
-            id: number;
-            icon: string;
-          },
-        ];
-      },
-    ];
+    location: {
+      name: string;
+      localtime: string;
+    };
   };
   topicTitle?: string;
   themeColor?: 'light' | 'dark';
   // onClick: () => void;
-  title?: string;  
+  title?: string;
   path?: string;
+  
 };
 
 export default Props;

@@ -8,17 +8,17 @@ import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 export default function Home() {
   const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
   const [articles, setArticles] = useState([]);
+  const [weather, setWeather] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       console.log('topicTitle', topicTitle);
-      const articleData = await fetchNews({topicTitle});
+      const articleData = await fetchNews({ topicTitle });
       setArticles(articleData);
       const weatherData = await fetchWeather();
-      console.log('weatherData', weatherData);
+      setWeather(weatherData);
     };
-
     fetchData();
   }, []);
 
@@ -26,9 +26,13 @@ export default function Home() {
     console.log('articles', articles);
   }, [articles]);
 
+  useEffect(() => {
+    console.log('weather', weather);
+  }, [weather]);
+
   return (
     <>
-      <DefaultLayout articles={articles} />
+      <DefaultLayout articles={articles} weather={weather} />
     </>
   );
 }

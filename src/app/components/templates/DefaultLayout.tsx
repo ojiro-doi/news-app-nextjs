@@ -5,7 +5,7 @@ import Props from '../../types/types';
 import Header from '../organisms/header/Header';
 import SidePanel from '../organisms/sidePanel/SidePanel';
 
-const DefaultLayout = ({ articles }: Props) => {
+const DefaultLayout = ({ articles,weather }: Props) => {
   return (
     <>
       <header className="fixed top-0 w-full">
@@ -20,7 +20,7 @@ const DefaultLayout = ({ articles }: Props) => {
             <ArticleList articles={articles} />
           </div>
           <div className="w-1/4">
-            <SidePanel />
+            <SidePanel weather={weather}/>
           </div>
         </div>
       </main>
