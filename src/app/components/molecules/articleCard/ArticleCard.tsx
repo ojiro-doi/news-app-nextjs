@@ -3,7 +3,11 @@ import moment from 'moment';
 import Props from '../../../types/types';
 
 const ArticleCard = ({ article }: Props) => {
-  const time = article ? moment(article.publishedAt).fromNow().slice(0, 1) : '';
+  if (!article) {
+    return null;
+  }
+  const time = article.publishedAt ? moment(article.publishedAt).fromNow().slice(0, 1) : '';
+  console.log(time);
   return (
     <div>
       {article && (

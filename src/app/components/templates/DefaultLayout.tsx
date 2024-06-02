@@ -15,7 +15,7 @@ const DefaultLayout = ({ articles,weather }: Props) => {
         <aside className="fixed top-16 ">
           <SideNav />
         </aside>
-        <div className="flex flex-1 ml-72 top-16 bg-green-200">
+        <div className="flex flex-1 ml-72 top-16 ">
           <div className="w-3/4">
             <ArticleList articles={articles} />
           </div>

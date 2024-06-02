@@ -33,12 +33,8 @@ const WeatherCard = ({ forecastDay }: WeatherProps) => {
             <span>日</span>
           </p>
           <img src={forecastDay.day.condition.icon} alt="Weather Icon" className="mr-2" />
-          <p>
-            {forecastDay.day.maxtemp_c}
-          </p>
-          <p>
-            {forecastDay.day.mintemp_c}
-          </p>
+          <p>{forecastDay.day.maxtemp_c}</p>
+          <p>{forecastDay.day.mintemp_c}</p>
         </div>
       )}
     </>

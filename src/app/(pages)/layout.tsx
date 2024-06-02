@@ -7,7 +7,7 @@ import { ThemeColorProvider } from '@/contexts/ThemeColorContext';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className='h-full'>
-      <body className='bg-slate-400'>
+      <body className='bg-white'>
         <TopicTitleProvider>
           <ThemeColorProvider>
             {/* ページ固有のコンテンツ */}
