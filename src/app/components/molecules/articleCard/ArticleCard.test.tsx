@@ -5,7 +5,7 @@ import ArticleCard from './ArticleCard';
 describe('Test ArticleCard', () => {
   it('renders an Article', () => {
     const article = {
-      title: 'Sample Article',
+      title: 'Sample ArticleCard',
       url: 'https://example.com',
       urlToImage: 'https://example.com/image.jpg',
       publishedAt: new Date().toISOString(),
@@ -15,7 +15,7 @@ describe('Test ArticleCard', () => {
     const aTag = screen.getByRole('link');
     expect(aTag).toBeInTheDocument();
 
-    const articleTitle = screen.getByText('Sample Article');
+    const articleTitle = screen.getByText('Sample ArticleCard');
     expect(articleTitle).toBeInTheDocument();
   });
 });

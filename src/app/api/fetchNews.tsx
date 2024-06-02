@@ -21,12 +21,7 @@ export const fetchNews= async ({topicTitle}: {topicTitle: string}) => {
     console.error("Error fetching the news data", error);
   }
 
-  return {
-    props: {
-      articleData,
-    },
-    revalidate: 60 * 10,//ISR 10分
-  };
+  return articleData;
 }
 
 export default fetchNews;

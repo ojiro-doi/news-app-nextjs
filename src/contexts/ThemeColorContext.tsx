@@ -12,7 +12,7 @@ export const ThemeColorContext = createContext<ThemeColorContextProps>({
 });
 
 export const ThemeColorProvider = ({ children }: { children: ReactNode }) => {
-  const [themeColor, setThemeColor] = useState<string>('Default Topic');
+  const [themeColor, setThemeColor] = useState<string>('light');
 
   return (
     <ThemeColorContext.Provider value={{ themeColor, setThemeColor }}>

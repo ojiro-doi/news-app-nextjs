@@ -1,6 +1,7 @@
 'use client';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import fetchNews from '../api/api';
+import fetchNews from '../api/fetchNews';
+import fetchWeather from '../api/fetchWeather';
 import DefaultLayout from '../components/templates/DefaultLayout';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 
@@ -13,7 +14,9 @@ export default function Home() {
     const fetchData = async () => {
       console.log('topicTitle', topicTitle);
       const articleData = await fetchNews({topicTitle});
-      setArticles(articleData.props.articleData);
+      setArticles(articleData);
+      const weatherData = await fetchWeather();
+      console.log('weatherData', weatherData);
     };
 
     fetchData();
