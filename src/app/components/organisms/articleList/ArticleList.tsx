@@ -8,7 +8,7 @@ const ArticleList = ({ articles}: Props) => {
 
   return (
     <div className='container mx-auto'>
-      <h2 className="text-black font-bold text-lg">{(topicTitle ?? '').charAt(0).toUpperCase() + (topicTitle ?? '').slice(1)}</h2>
+      <h2 className="text-black font-bold text-lg">{(topicTitle ?? 'headlines').charAt(0).toUpperCase() + (topicTitle ?? 'headlines').slice(1)}</h2>
       <ul className="h-full">
         {articles &&
           articles.map((article, index) => (

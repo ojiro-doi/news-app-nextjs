@@ -10,7 +10,7 @@ import { MdOutlineScience } from 'react-icons/md'; //technology
 import { BiSlideshow } from 'react-icons/bi'; //entertainment
 import { MdDirectionsBike } from 'react-icons/md'; //sports
 
-const SideNavButton = ({ path, title }: Props) => {
+const SideNavButton = ({ path, title}: Props) => {
   const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
   const { themeColor } = useContext(ThemeColorContext);
 
@@ -57,10 +57,12 @@ const SideNavButton = ({ path, title }: Props) => {
 
   // 背景・hoverの色設定
   let bgColorSelect;
+  let textColorSelect;
   let hoverColorSelect;
   switch (title) {
     case topicTitle:
       bgColorSelect = 'bg-sky-200';
+      textColorSelect = 'text-white';
       hoverColorSelect = 'hover:bg-sky-200';
       break;
     default:

@@ -40,8 +40,8 @@ type Props = {
   topicTitle?: string;
   themeColor?: 'light' | 'dark';
   // onClick: () => void;
-  title?: string;
   path?: string;
+  title?: string;
   
 };
 
