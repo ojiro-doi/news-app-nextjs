@@ -12,7 +12,7 @@ const HeaderNav = () => {
   }
 
   return (
-    <div>
+    <div className=''>
       <IconButton
         onClick={searchClick}
         icon={'search'}

@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleList from '../organisms/articleList/ArticleList';
 import SideNav from '../organisms/sideNav/SideNav';
 import Props from '../../types/types';

@@ -11,14 +11,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const MenuButton: Story = {
-  args: {
-    icon: 'menu',
-    onClick: () => {
-      alert('menu button clicked');
-    },
-  },
-};
 export const SearchButton: Story = {
   args: {
     icon: 'search',

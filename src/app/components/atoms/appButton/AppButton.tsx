@@ -4,7 +4,7 @@ import React from 'react';
 const AppButton = () => {
   return (
     <div>
-      <h1 className="text-black text-2xl">
+      <h1 className="text-black font-bold text-2xl">
         <Link href="/">News</Link>
       </h1>
     </div>

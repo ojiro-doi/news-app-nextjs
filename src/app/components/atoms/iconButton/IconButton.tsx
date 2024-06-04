@@ -9,7 +9,7 @@ import { IoMoon } from "react-icons/io5";
 
 type IconProps = {
   onClick: () => void;
-  icon: 'menu' | 'search' | 'theme';
+  icon: 'search' | 'theme';
 };
 
 const IconButton = ({ onClick, icon}: IconProps) => {
@@ -18,9 +18,6 @@ const IconButton = ({ onClick, icon}: IconProps) => {
   let iconSelect, themeColorSelect;
 
   switch (icon) {
-    case 'menu':
-      iconSelect = <FaBars data-testid="icon" />;
-      break;
     case 'search':
       iconSelect = <FaSearch data-testid="icon" />;
       break;
@@ -48,7 +45,6 @@ const IconButton = ({ onClick, icon}: IconProps) => {
       break;
     case 'dark':
       themeColorSelect='#ffffff';
-      
       break;
     default:
       themeColorSelect='#000000';
@@ -56,7 +52,7 @@ const IconButton = ({ onClick, icon}: IconProps) => {
   }
 
   return (
-    <button onClick={onClick} className="bg-blue-300 ">
+    <button onClick={onClick} className="px-2">
       <IconContext.Provider value={{ color: themeColorSelect, size: '32' }}>{iconSelect}</IconContext.Provider>
     </button>
   );
