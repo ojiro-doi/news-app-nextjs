@@ -2,7 +2,6 @@ import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import React, { useContext } from 'react';
 import { IconContext } from 'react-icons';
 import { FaSearch } from 'react-icons/fa'; //Searchアイコン
-import { FaBars } from 'react-icons/fa'; //Menuアイコン
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
 
@@ -41,19 +40,19 @@ const IconButton = ({ onClick, icon}: IconProps) => {
 
   switch (themeColor) {
     case 'light':
-      themeColorSelect='#000000';
+      themeColorSelect='#454746';
       break;
     case 'dark':
-      themeColorSelect='#ffffff';
+      themeColorSelect='C4C7C5';
       break;
     default:
-      themeColorSelect='#000000';
+      themeColorSelect='#454746';
       break;
   }
 
   return (
-    <button onClick={onClick} className="px-2">
-      <IconContext.Provider value={{ color: themeColorSelect, size: '32' }}>{iconSelect}</IconContext.Provider>
+    <button onClick={onClick} className="mx-2 hover:bg-slate-400">
+      <IconContext.Provider value={{ color: themeColorSelect, size: '24' }} >{iconSelect}</IconContext.Provider>
     </button>
   );
 };

@@ -7,7 +7,7 @@ describe('IconButton', () => {
   it('should render the correct icon based on the icon prop', () => {
     const { rerender, getByTestId } = render(
       <ThemeColorContext.Provider value={{ themeColor: 'light', setThemeColor: () => {} }}>
-        <IconButton onClick={() => {}} icon="menu" />
+        <IconButton onClick={() => {}} icon="search" />
       </ThemeColorContext.Provider>
     );
 
@@ -15,7 +15,7 @@ describe('IconButton', () => {
 
     rerender(
       <ThemeColorContext.Provider value={{ themeColor: 'light', setThemeColor: () => {} }}>
-        <IconButton onClick={() => {}} icon="search" />
+        <IconButton onClick={() => {}} icon="theme" />
       </ThemeColorContext.Provider>
     );
 
@@ -27,7 +27,7 @@ describe('IconButton', () => {
 
     const { getByRole } = render(
       <ThemeColorContext.Provider value={{ themeColor: 'light', setThemeColor: () => {} }}>
-        <IconButton onClick={onClick} icon="menu" />
+        <IconButton onClick={onClick} icon="search" />
       </ThemeColorContext.Provider>
     );
 

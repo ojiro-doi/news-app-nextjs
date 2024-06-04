@@ -14,22 +14,23 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        //lightTheme
+        blueColor_lightTheme: '#C4EBED', 
+        grayColor_lightTheme: '#F5F8FC',
+        textColor_lightTheme: '#454746',
+        //darkTheme
+        blueColor_darkTheme: '#004A76',
+        skyColor_darkTheme: '#C2E7FE',
+        grayColor_darkTheme: '#303132',
+        textColor_darkTheme: '#C4C7C5',
+        bgColor_darkTheme: '#23272F',
+      },
     },
   },
   plugins: [],
 };
 
-// module.exports = {
-//   // 追加
-//   theme: {
-//     extend: {
-//       colors: {
-//         // 'カラー名': 'カラーコード'
-//         'light-blue': '#C4EBED',
-//         'light-gray': '#F5F8FC',
-//       },
-//     },
-//   },
-// };
+
 
 export default config;

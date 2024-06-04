@@ -7,9 +7,6 @@ import SidePanel from '../organisms/sidePanel/SidePanel';
 const DefaultLayout = ({ articles,weather }: Props) => {
   return (
     <>
-      <header className="fixed top-0 w-full">
-        <Header />
-      </header>
       <main className="pt-16">
         <aside className="fixed top-16 ">
           <SideNav />
@@ -23,7 +20,6 @@ const DefaultLayout = ({ articles,weather }: Props) => {
           </div>
         </div>
       </main>
-      <footer className=""></footer>
     </>
   );
 };

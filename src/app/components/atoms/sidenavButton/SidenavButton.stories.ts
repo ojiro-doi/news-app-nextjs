@@ -18,6 +18,7 @@ export const ThemeLight: Story = {
   args: {
     path: '/topics/sports',
     title: 'Sports',
+    topicTitle: 'Sports',
     themeColor: 'light',
     },
 };
@@ -26,6 +27,7 @@ export const ThemeDark: Story = {
   args: {
     path: '/topics/sports',
     title: 'Sports',
+    topicTitle: 'Sports',
     themeColor: 'dark',
     },
 };

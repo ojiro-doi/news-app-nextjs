@@ -15,13 +15,13 @@ const MenuButton = ({ isOpen, toggleMenu }: MenuProps) => {
 
   switch (themeColor) {
     case 'light':
-      themeColorSelect = '#000000';
+      themeColorSelect = '#454746';
       break;
     case 'dark':
-      themeColorSelect = '#ffffff';
+      themeColorSelect = '#C4C7C5';
       break;
     default:
-      themeColorSelect = '#000000';
+      themeColorSelect = '#454746';
       break;
   }
 

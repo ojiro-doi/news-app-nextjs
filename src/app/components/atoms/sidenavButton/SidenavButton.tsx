@@ -42,37 +42,45 @@ const SideNavButton = ({ path, title}: Props) => {
   }
 
   // テーマカラーの設定
-  let themeColorSelect;
-  switch (themeColor) {
-    case 'light':
-      themeColorSelect = '#000000';
-      break;
-    case 'dark':
-      themeColorSelect = '#ffffff';
-      break;
-    default:
-      themeColorSelect = '#000000';
-      break;
-  }
-
-  // 背景・hoverの色設定
   let bgColorSelect;
   let textColorSelect;
   let hoverColorSelect;
-  switch (title) {
-    case topicTitle:
-      bgColorSelect = 'bg-sky-200';
-      textColorSelect = 'text-white';
-      hoverColorSelect = 'hover:bg-sky-200';
+  switch (themeColor) {
+    case 'light':
+      switch (title) {
+        case topicTitle:
+          bgColorSelect = 'bg-blueColor_lightTheme';
+          textColorSelect = 'text-black';
+          hoverColorSelect = 'hover:bg-blueColor_lightTheme';
+          break;
+        default:
+          bgColorSelect = 'bg-grayColor_lightTheme';
+          hoverColorSelect = 'hover:bg-gray-200';
+          break;
+      }
+      break;
+    case 'dark':
+      switch (title) {
+        case topicTitle:
+          bgColorSelect = 'bg-blueColor_darkTheme';
+          textColorSelect = 'text-skyColor_darkTheme';
+          hoverColorSelect = 'hover:bg-grayColor_darkTheme';
+          break;
+        default:
+          bgColorSelect = 'bg-grayColor_darkTheme';
+          hoverColorSelect = 'hover:bg-gray-200';
+          break;
+      }
       break;
     default:
-      bgColorSelect = 'bg-gray-100';
+      bgColorSelect = 'bg-grayColor_lightTheme';
+      textColorSelect = 'text-grayColor_lightTheme';
       hoverColorSelect = 'hover:bg-gray-200';
       break;
   }
 
   return (
-    <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
+    <IconContext.Provider value={{ color: textColorSelect, size: '24' }}>
       <button className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect}`}>
         <Link
           href={`${path}`}
