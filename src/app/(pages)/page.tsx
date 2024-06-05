@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import fetchNews from '../api/fetchNews';
 import fetchWeather from '../api/fetchWeather';
 import DefaultLayout from '../components/templates/DefaultLayout';

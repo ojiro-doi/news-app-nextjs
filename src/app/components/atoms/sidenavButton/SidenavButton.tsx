@@ -9,6 +9,7 @@ import { IoBusiness } from 'react-icons/io5'; //business
 import { MdOutlineScience } from 'react-icons/md'; //technology
 import { BiSlideshow } from 'react-icons/bi'; //entertainment
 import { MdDirectionsBike } from 'react-icons/md'; //sports
+import { text } from 'stream/consumers';
 
 const SideNavButton = ({ path, title}: Props) => {
   const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
@@ -55,6 +56,7 @@ const SideNavButton = ({ path, title}: Props) => {
           break;
         default:
           bgColorSelect = 'bg-grayColor_lightTheme';
+          textColorSelect = 'text-textColor_lightTheme';
           hoverColorSelect = 'hover:bg-gray-200';
           break;
       }
@@ -64,24 +66,25 @@ const SideNavButton = ({ path, title}: Props) => {
         case topicTitle:
           bgColorSelect = 'bg-blueColor_darkTheme';
           textColorSelect = 'text-skyColor_darkTheme';
-          hoverColorSelect = 'hover:bg-grayColor_darkTheme';
+          hoverColorSelect = 'hover:bg-neutral-700';
           break;
         default:
           bgColorSelect = 'bg-grayColor_darkTheme';
-          hoverColorSelect = 'hover:bg-gray-200';
+          textColorSelect = 'text-textColor_darkTheme';
+          hoverColorSelect = 'hover:bg-neutral-700';
           break;
       }
       break;
     default:
       bgColorSelect = 'bg-grayColor_lightTheme';
-      textColorSelect = 'text-grayColor_lightTheme';
+      textColorSelect = 'text-textColor_lightTheme';
       hoverColorSelect = 'hover:bg-gray-200';
       break;
   }
 
   return (
     <IconContext.Provider value={{ color: textColorSelect, size: '24' }}>
-      <button className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect}`}>
+      <button className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect} ${textColorSelect}`}>
         <Link
           href={`${path}`}
           onClick={() => {
