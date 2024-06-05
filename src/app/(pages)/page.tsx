@@ -4,20 +4,23 @@ import fetchNews from '../api/fetchNews';
 import fetchWeather from '../api/fetchWeather';
 import DefaultLayout from '../components/templates/DefaultLayout';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
+import fetchLocalNews from '../api/fetchLocalNews';
 
 export default function Home() {
-  const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
+  const { topicTitle,setTopicTitle } = useContext(TopicTitleContext);
   const [articles, setArticles] = useState([]);
+  const [localArticles, setLocalArticles] = useState([]);
   const [weather, setWeather] = useState();
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log('topicTitle', topicTitle);
+      setTopicTitle('Headlines');
       const articleData = await fetchNews({ topicTitle });
       setArticles(articleData);
       const weatherData = await fetchWeather();
       setWeather(weatherData);
+      const localArticleData = await fetchLocalNews();
+      setLocalArticles(localArticleData);
     };
     fetchData();
   }, []);
@@ -30,9 +33,13 @@ export default function Home() {
     console.log('weather', weather);
   }, [weather]);
 
+  useEffect(() => {
+    console.log('localArticles', localArticles);
+  }, [localArticles]);
+
   return (
     <>
-      <DefaultLayout articles={articles} weather={weather} />
+      <DefaultLayout articles={articles} localArticles={localArticles} weather={weather} />
     </>
   );
 }

@@ -6,8 +6,14 @@ const ArticleCard = ({ article }: Props) => {
   if (!article) {
     return null;
   }
-  const time = article.publishedAt ? moment(article.publishedAt).fromNow().slice(0, 1) : '';
-  console.log(time);
+  const time =
+    moment(article.publishedAt || moment.now())
+      .fromNow()
+      .slice(0, 1) == 'a'
+      ? 1
+      : moment(article.publishedAt || moment.now())
+          .fromNow()
+          .slice(0, 1);
   return (
     <div>
       {article && (

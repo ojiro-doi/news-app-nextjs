@@ -16,31 +16,42 @@ const WeatherWidget = ({ weather }: Props) => {
   // const { forecastday } = weather.forecast;
 
   const date = new Date(location.localtime);
+  const todayHour = date.getHours();
   const todayDate = date.getDate();
   const todayMonth = date.getMonth() + 1;
 
   return (
-    <div>
-      <h2>{location.name}</h2>
-      <h2>
-        今日
-        <span>
-          {todayMonth}/{todayDate}
-        </span>
-      </h2>
-      <img src={current.condition.icon} alt="Weather Icon" />
-      <p>
-        {current.temp_c}
-        <span>˚c</span>
-      </p>
-      <ul className="flex">
-        {forecastday &&
-          forecastday.map((forecastDay, index) => (
-            <li key={index} className="flex-col">
-              <WeatherCard forecastDay={forecastDay} />
-            </li>
-          ))}
-      </ul>
+    <div className="bg-slate-100 rounded-md">
+      <div className='px-4'>
+        <h1 className="border-b font-bold p-2">{location.name}</h1>
+        <div className="flex justify-between p-2 border-b">
+          <div className="flex-col">
+            {/* <span className=''>現在</span> */}
+            <span className='mr-1'>
+              {todayMonth}/{todayDate}
+            </span>
+            <span>
+              {todayHour}
+              <span>時</span>
+            </span>
+            <p className='text-2xl font-semibold'>
+              {current.temp_c}
+              <span>˚c</span>
+            </p>
+          </div>
+          <img src={current.condition.icon} alt="Weather Icon" />
+        </div>
+        <div className='p-2'>
+          <ul className="flex">
+            {forecastday &&
+              forecastday.map((forecastDay, index) => (
+                <li key={index} className="flex-col">
+                  <WeatherCard forecastDay={forecastDay} />
+                </li>
+              ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

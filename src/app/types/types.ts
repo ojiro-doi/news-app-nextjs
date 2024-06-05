@@ -7,6 +7,7 @@ type Article = {
 
 type Props = {
   articles?: Article[];
+  localArticles?: Article[];
   article?: Article;
   weather?: {
     current: {

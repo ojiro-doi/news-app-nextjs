@@ -27,14 +27,14 @@ const WeatherCard = ({ forecastDay }: WeatherProps) => {
   return (
     <>
       {forecastDay && (
-        <div>
-          <p>
+        <div className='text-center'>
+          <div>
             {dayNumber}
             <span>日</span>
-          </p>
-          <img src={forecastDay.day.condition.icon} alt="Weather Icon" className="mr-2" />
-          <p>{forecastDay.day.maxtemp_c}</p>
-          <p>{forecastDay.day.mintemp_c}</p>
+          </div>
+          <img src={forecastDay.day.condition.icon} alt="Weather Icon" className="" />
+          <div className='text-red-500'>{Math.floor(forecastDay.day.maxtemp_c)}</div>
+          <div className='text-blue-400'>{Math.floor(forecastDay.day.mintemp_c)}</div>
         </div>
       )}
     </>
