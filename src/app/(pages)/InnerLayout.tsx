@@ -1,6 +1,6 @@
 'use client';
 import '@/styles/globals.css';
-import React, { useContext } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import Header from '@/app/components/organisms/header/Header';
 import SideNav from '@/app/components/organisms/sideNav/SideNav';
@@ -8,6 +8,10 @@ import SideNav from '@/app/components/organisms/sideNav/SideNav';
 
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   const { themeColor } = useContext(ThemeColorContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
 
   let bgColorSelect;
   switch (themeColor) {
@@ -25,12 +29,17 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <body className={`h-full ${bgColorSelect}`}>
       <header className="fixed top-0 w-full">
-        <Header />
+        <Header isOpen={isOpen} toggleMenu={toggleMenu}/>
       </header>
       <main className="pt-16">
-        <aside className="fixed top-16">
+        <div className="hidden md:block md:fixed top-16 ">
           <SideNav />
-        </aside>
+        </div>
+        {isOpen && (
+          <div className="block md:hidden fixed top-16 z-50">
+            <SideNav />
+          </div>
+        )}
         <div className="">{children}</div>
       </main>
       <footer></footer>

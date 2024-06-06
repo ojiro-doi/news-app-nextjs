@@ -22,7 +22,7 @@ const Topics = () => {
 
   return (
     <>
-      <div className="ml-72 top-16">
+      <div className="p-4 md:ml-72 top-16">
         <ArticleList articles={articles} title={topicTitle} />
       </div>
     </>

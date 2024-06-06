@@ -45,6 +45,9 @@ type Props = {
   path?: string;
   title?: string;
   keyword?: string;
+
+  isOpen?: boolean;
+  toggleMenu?: () => void;
 };
 
 export default Props;

@@ -27,7 +27,7 @@ const MenuButton = ({ isOpen, toggleMenu }: MenuProps) => {
 
   return (
     <>
-      <div className={`mr-2 md:hidden ${isOpen ? 'hidden' : ''}`}>
+      <div className={`md:hidden ${isOpen ? 'hidden' : ''}`}>
         <button onClick={toggleMenu} className="">
           <FaBars size={32} style={{ color: themeColorSelect }} />
         </button>

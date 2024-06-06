@@ -6,7 +6,7 @@ import ArticleList from '../articleList/ArticleList';
 const SidePanel = ({ weather,localArticles }: Props) => {
   return (
     <>
-      <div>
+      <div className='mb-4'>
         <WeatherWidget weather={weather} />
       </div>
       <div>

@@ -51,7 +51,7 @@ const IconButton = ({ onClick, icon}: IconProps) => {
   }
 
   return (
-    <button onClick={onClick} className="mx-2 hover:bg-slate-400">
+    <button onClick={onClick} className="mx-2">
       <IconContext.Provider value={{ color: themeColorSelect, size: '24' }} >{iconSelect}</IconContext.Provider>
     </button>
   );
