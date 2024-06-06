@@ -16,18 +16,22 @@ const ArticleCard = ({ article, themeColor }: Props) => {
 
   let bgColorSelect;
   let textColorSelect;
+  let borderColorSelect;
   switch (themeColor) {
     case 'light':
       bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
+      borderColorSelect='border-textColor_lightTheme'
       break;
     case 'dark':
       bgColorSelect = 'bg-black';
       textColorSelect = 'text-white';
+      borderColorSelect='border-textColor_darkTheme'
       break;
     default:
       bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
+      borderColorSelect='border-textColor_lightTheme'
       break;
   }
 
@@ -38,7 +42,7 @@ const ArticleCard = ({ article, themeColor }: Props) => {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex items-center p-2 ${bgColorSelect} rounded-md border my-4 justify-between mx-auto container`}
+          className={`flex items-center p-2 ${bgColorSelect} rounded-md border ${borderColorSelect} my-4 justify-between mx-auto container`}
         >
           <div className={'mx-2'}>
             <p className="text-xs ">{article.title}</p>

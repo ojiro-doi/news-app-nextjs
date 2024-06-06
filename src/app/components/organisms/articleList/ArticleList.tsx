@@ -8,24 +8,28 @@ const ArticleList = ({ articles, title }: Props) => {
   // テーマカラーの設定
   let bgColorSelect;
   let textColorSelect;
+  let titleColorSelect;
   switch (themeColor) {
     case 'light':
       bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
+      titleColorSelect='text-textColor_lightTheme'
       break;
     case 'dark':
       bgColorSelect = 'bg-bgColor_darkTheme';
       textColorSelect = 'text-white';
+      titleColorSelect='text-textColor_darkTheme'
       break;
     default:
       bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
+      titleColorSelect='text-textColor_lightTheme'
       break;
   }
 
   return (
     <div className={`container mx-auto ${bgColorSelect} ${textColorSelect}`}>
-      <h2 className="font-bold text-lg">{(title ?? '').charAt(0).toUpperCase() + (title ?? '').slice(1)}</h2>
+      <h2 className={`${titleColorSelect} font-bold text-lg`}>{(title ?? '').charAt(0).toUpperCase() + (title ?? '').slice(1)}</h2>
       <ul className="h-full">
         {articles &&
           articles.map((article, index) => (

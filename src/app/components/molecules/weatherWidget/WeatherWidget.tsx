@@ -15,18 +15,22 @@ const WeatherWidget = ({ weather }: Props) => {
   // テーマカラーの設定
   let bgColorSelect;
   let textColorSelect;
+  let borderColorSelect;
   switch (themeColor) {
     case 'light':
       bgColorSelect = 'bg-white';
-      textColorSelect = 'text-black';
+      textColorSelect = 'text-textColor_lightTheme';
+      borderColorSelect='border-textColor_lightTheme'
       break;
     case 'dark':
       bgColorSelect = 'bg-black';
-      textColorSelect = 'text-white';
+      textColorSelect = 'text-textColor_darkTheme';
+      borderColorSelect='border-textColor_darkTheme'
       break;
     default:
       bgColorSelect = 'bg-white';
-      textColorSelect = 'text-black';
+      textColorSelect = 'text-textColor_lightTheme';
+      borderColorSelect='border-textColor_lightTheme'
       break;
   }
 
@@ -36,7 +40,7 @@ const WeatherWidget = ({ weather }: Props) => {
   const todayMonth = date.getMonth() + 1;
 
   return (
-    <div className= {`${bgColorSelect} ${textColorSelect} rounded-md border`}>
+    <div className= {`${bgColorSelect} ${textColorSelect} rounded-md border ${borderColorSelect}`}>
       <div className='px-4'>
         <h1 className="border-b font-bold p-2">{location.name}</h1>
         <div className="flex justify-between p-2 border-b">
@@ -49,7 +53,7 @@ const WeatherWidget = ({ weather }: Props) => {
               {todayHour}
               <span>時</span>
             </span>
-            <p className='text-2xl font-semibold'>
+            <p className='text-2xl font-semibold '>
               {current.temp_c}
               <span>˚c</span>
             </p>
