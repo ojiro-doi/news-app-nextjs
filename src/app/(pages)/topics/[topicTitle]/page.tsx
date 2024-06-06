@@ -26,9 +26,9 @@ const Topics = () => {
     <>
       <div className="ml-72 top-16">
         <h2 className="text-black font-bold text-lg">
-          {(topicTitle ?? 'headlines').charAt(0).toUpperCase() + (topicTitle ?? 'headlines').slice(1)}
+          {/* {(topicTitle ?? 'headlines').charAt(0).toUpperCase() + (topicTitle ?? 'headlines').slice(1)} */}
         </h2>
-        <ArticleList articles={articles} />
+        <ArticleList articles={articles} title={topicTitle}/>
       </div>
     </>
   );

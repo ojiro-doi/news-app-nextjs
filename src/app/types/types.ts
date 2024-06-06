@@ -39,7 +39,7 @@ type Props = {
     };
   };
   topicTitle?: string;
-  themeColor?: 'light' | 'dark';
+  themeColor?: string;
   // onClick: () => void;
   path?: string;
   title?: string;

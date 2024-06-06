@@ -30,7 +30,7 @@ const WeatherCard = ({ forecastDay }: WeatherProps) => {
         <div className='text-center'>
           <div>
             {dayNumber}
-            <span>日</span>
+            {/* <span>d</span> */}
           </div>
           <img src={forecastDay.day.condition.icon} alt="Weather Icon" className="" />
           <div className='text-red-500'>{Math.floor(forecastDay.day.maxtemp_c)}</div>

@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
 import moment from 'moment';
 import Props from '../../../types/types';
-import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 
-const ArticleCard = ({ article }: Props) => {
-  const { themeColor } = useContext(ThemeColorContext);
+const ArticleCard = ({ article, themeColor }: Props) => {
   if (!article) {
     return null;
   }
@@ -17,24 +14,23 @@ const ArticleCard = ({ article }: Props) => {
           .fromNow()
           .slice(0, 1);
 
-  // テーマカラーの設定
   let bgColorSelect;
   let textColorSelect;
   switch (themeColor) {
     case 'light':
-      bgColorSelect = 'white';
+      bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
       break;
     case 'dark':
-      bgColorSelect = 'grayColor_darkTheme';
+      bgColorSelect = 'bg-black';
       textColorSelect = 'text-white';
       break;
     default:
-      bgColorSelect = 'white';
+      bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
       break;
   }
-  
+
   return (
     <div>
       {article && (
@@ -42,9 +38,9 @@ const ArticleCard = ({ article }: Props) => {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex items-center p-2 rounded-md border my-4 bg-${bgColorSelect}  justify-between mx-auto container `}
+          className={`flex items-center p-2 ${bgColorSelect} rounded-md border my-4 justify-between mx-auto container`}
         >
-          <div className={`mx-2 ${textColorSelect}`}>
+          <div className={'mx-2'}>
             <p className="text-xs ">{article.title}</p>
             <p className="text-xs text-gray-400">{time}時間前</p>
           </div>

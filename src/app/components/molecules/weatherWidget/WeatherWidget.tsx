@@ -1,8 +1,10 @@
 import Props from '@/app/types/types';
-import React from 'react';
+import React, { useContext } from 'react';
 import WeatherCard from '../../atoms/WeatherCard/WeatherCard';
+import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 
 const WeatherWidget = ({ weather }: Props) => {
+  const { themeColor } = useContext(ThemeColorContext);
   if (!weather) {
     return null;
   }
@@ -10,10 +12,23 @@ const WeatherWidget = ({ weather }: Props) => {
   const { current, forecast, location } = weather;
   const { forecastday } = forecast;
 
-  // const { cloud, condition } = weather.current;
-  // const { icon: currentIcon, text: currentText } = condition;
-  // const { name } = weather.location;
-  // const { forecastday } = weather.forecast;
+  // テーマカラーの設定
+  let bgColorSelect;
+  let textColorSelect;
+  switch (themeColor) {
+    case 'light':
+      bgColorSelect = 'bg-white';
+      textColorSelect = 'text-black';
+      break;
+    case 'dark':
+      bgColorSelect = 'bg-black';
+      textColorSelect = 'text-white';
+      break;
+    default:
+      bgColorSelect = 'bg-white';
+      textColorSelect = 'text-black';
+      break;
+  }
 
   const date = new Date(location.localtime);
   const todayHour = date.getHours();
@@ -21,7 +36,7 @@ const WeatherWidget = ({ weather }: Props) => {
   const todayMonth = date.getMonth() + 1;
 
   return (
-    <div className="bg-slate-100 rounded-md">
+    <div className= {`${bgColorSelect} ${textColorSelect} rounded-md border`}>
       <div className='px-4'>
         <h1 className="border-b font-bold p-2">{location.name}</h1>
         <div className="flex justify-between p-2 border-b">

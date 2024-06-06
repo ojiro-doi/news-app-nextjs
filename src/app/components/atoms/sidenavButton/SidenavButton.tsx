@@ -9,7 +9,6 @@ import { IoBusiness } from 'react-icons/io5'; //business
 import { MdOutlineScience } from 'react-icons/md'; //technology
 import { BiSlideshow } from 'react-icons/bi'; //entertainment
 import { MdDirectionsBike } from 'react-icons/md'; //sports
-import { text } from 'stream/consumers';
 
 const SideNavButton = ({ path, title}: Props) => {
   const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);

@@ -15,13 +15,13 @@ const Header = () => {
   let bgColorSelect;
   switch (themeColor) {
     case 'light':
-      bgColorSelect = 'bg-grayColor_lightTheme';
+      bgColorSelect = 'bg-white';
       break;
     case 'dark':
       bgColorSelect = 'bg-bgColor_darkTheme';
       break;
     default:
-      bgColorSelect = 'bg-grayColor_lightTheme';
+      bgColorSelect = 'bg-white';
       break;
   }
 

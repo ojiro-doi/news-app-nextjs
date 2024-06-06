@@ -10,7 +10,7 @@ const SidePanel = ({ weather,localArticles }: Props) => {
         <WeatherWidget weather={weather} />
       </div>
       <div>
-        <ArticleList articles={localArticles}/>
+        <ArticleList articles={localArticles} title='local news'/>
       </div>
     </>
   );
