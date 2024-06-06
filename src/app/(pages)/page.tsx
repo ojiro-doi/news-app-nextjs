@@ -21,7 +21,7 @@ export default function Home() {
       setArticles(articleData);
       const localArticleData = await fetchLocalNews();
       setLocalArticles(localArticleData);
-      const keywordArticleData = await fetchKeywordNews({ topicTitle });
+      const keywordArticleData = await fetchKeywordNews({ keyword });
       setKeywordArticles(keywordArticleData);
       const weatherData = await fetchWeather();
       setWeather(weatherData);

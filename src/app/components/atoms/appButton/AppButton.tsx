@@ -1,9 +1,11 @@
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
+import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 
 const AppButton = () => {
   const { themeColor } = useContext(ThemeColorContext);
+  const { setTopicTitle } = useContext(TopicTitleContext);
 
   let themeColorSelect;
 
@@ -22,7 +24,7 @@ const AppButton = () => {
   return (
     <div>
       <h1 style={{color:themeColorSelect}} className=" font-bold text-2xl">
-        <Link href="/">News</Link>
+        <Link href="/" onClick={()=>{setTopicTitle("Headlines")}}>News</Link>
       </h1>
     </div>
   );

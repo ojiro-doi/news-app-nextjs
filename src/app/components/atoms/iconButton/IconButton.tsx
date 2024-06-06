@@ -1,26 +1,20 @@
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import React, { useContext } from 'react';
 import { IconContext } from 'react-icons';
-import { FaSearch } from 'react-icons/fa'; //Searchアイコン
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
 
 
 type IconProps = {
   onClick: () => void;
-  icon: 'search' | 'theme';
 };
 
-const IconButton = ({ onClick, icon}: IconProps) => {
+const IconButton = ({ onClick}: IconProps) => {
   const {themeColor} = useContext(ThemeColorContext);
 
   let iconSelect, themeColorSelect;
 
-  switch (icon) {
-    case 'search':
-      iconSelect = <FaSearch data-testid="icon" />;
-      break;
-    case 'theme':
+
       switch (themeColor) {
         case 'light':
           iconSelect = <IoMoon data-testid="icon" />;
@@ -32,11 +26,7 @@ const IconButton = ({ onClick, icon}: IconProps) => {
           iconSelect = <IoMoon data-testid="icon" />;
           break;
       }
-      break;
-    default:
-      iconSelect = null;
-      break;
-  }
+
 
   switch (themeColor) {
     case 'light':
@@ -51,9 +41,9 @@ const IconButton = ({ onClick, icon}: IconProps) => {
   }
 
   return (
-    <button onClick={onClick} className="mx-2">
-      <IconContext.Provider value={{ color: themeColorSelect, size: '24' }} >{iconSelect}</IconContext.Provider>
-    </button>
+  <button onClick={onClick} className=''>
+    <IconContext.Provider value={{ color: themeColorSelect, size: '24' }} >{iconSelect}</IconContext.Provider>
+  </button>
   );
 };
 
