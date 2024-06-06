@@ -15,7 +15,7 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
       bgColorSelect = 'bg-grayColor_lightTheme';
       break;
     case 'dark':
-      bgColorSelect = 'bg-grayColor_darkTheme';
+      bgColorSelect = 'bg-bgColor_darkTheme';
       break;
     default:
       bgColorSelect = 'bg-grayColor_lightTheme';
@@ -23,7 +23,7 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className={`h-full ${bgColorSelect}`}>
+    <body className={`h-full ${bgColorSelect}`}>
       <header className="fixed top-0 w-full">
         <Header />
       </header>
@@ -34,7 +34,7 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="">{children}</div>
       </main>
       <footer></footer>
-    </div>
+    </body>
   );
 };
 

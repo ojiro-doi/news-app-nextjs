@@ -12,21 +12,21 @@ const Header = () => {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
-  // let themeColorSelect;
-  // switch (themeColor) {
-  //   case 'light':
-  //     themeColorSelect='#454746';
-  //     break;
-  //   case 'dark':
-  //     themeColorSelect='C4C7C5';
-  //     break;
-  //   default:
-  //     themeColorSelect='#454746';
-  //     break;
-  // }
+  let bgColorSelect;
+  switch (themeColor) {
+    case 'light':
+      bgColorSelect = 'bg-grayColor_lightTheme';
+      break;
+    case 'dark':
+      bgColorSelect = 'bg-bgColor_darkTheme';
+      break;
+    default:
+      bgColorSelect = 'bg-grayColor_lightTheme';
+      break;
+  }
 
   return (
-    <div className="flex items-center justify-between bg-white border border-gray-500 h-16 px-8">
+    <div className={`flex items-center justify-between ${bgColorSelect} border border-gray-500 h-16 px-8`}>
       <div className="flex justify-start">
         <MenuButton isOpen={isOpen} toggleMenu={toggleMenu} />
       </div>
