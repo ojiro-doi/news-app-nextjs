@@ -46,8 +46,10 @@ type Props = {
   title?: string;
   keyword?: string;
 
-  isOpen?: boolean;
+  menuOpen?: boolean;
+  searchOpen?: boolean;
   toggleMenu?: () => void;
+  toggleSearch?: () => void;
 };
 
 export default Props;

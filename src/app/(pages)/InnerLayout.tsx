@@ -1,17 +1,28 @@
 'use client';
 import '@/styles/globals.css';
-import React, { useCallback, useContext, useState } from 'react';
+import React, { use, useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import Header from '@/app/components/organisms/header/Header';
 import SideNav from '@/app/components/organisms/sideNav/SideNav';
 
-
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   const { themeColor } = useContext(ThemeColorContext);
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
+    setMenuOpen(!menuOpen);
+  }, [menuOpen]);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const toggleSearch = useCallback(() => {
+    setSearchOpen(!searchOpen);
+  }, [searchOpen]);
+
+  useEffect(() => {
+    console.log('searchOpen:', searchOpen);
+  } ,[searchOpen]);
+
+  useEffect(() => {
+    console.log('menuOpen:', menuOpen);
+  } ,[menuOpen]);
 
   let bgColorSelect;
   switch (themeColor) {
@@ -29,13 +40,13 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <body className={`h-full ${bgColorSelect}`}>
       <header className="fixed top-0 w-full">
-        <Header isOpen={isOpen} toggleMenu={toggleMenu}/>
+        <Header menuOpen={menuOpen} toggleMenu={toggleMenu}  toggleSearch={toggleSearch}/>
       </header>
       <main className="pt-16">
         <div className="hidden md:block md:fixed top-16 ">
           <SideNav />
         </div>
-        {isOpen && (
+        {menuOpen && (
           <div className="block md:hidden fixed top-16 z-50">
             <SideNav />
           </div>

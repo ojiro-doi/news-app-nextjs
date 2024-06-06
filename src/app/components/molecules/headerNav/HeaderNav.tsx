@@ -4,14 +4,16 @@ import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import { useRouter } from 'next/navigation';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import SearchButton from '../../atoms/searchButton/SearchButton';
+import Props from '@/app/types/types';
 
-const HeaderNav = () => {
+const HeaderNav = ({searchOpen,toggleSearch}:Props) => {
   const [keyword, setKeyword] = useState('');
   const {setTopicTitle} = useContext(TopicTitleContext);
   const {themeColor,setThemeColor} = useContext(ThemeColorContext);
   const router = useRouter();
 
   const searchClick = () => {
+    if (keyword === '') return;
     router.push(`/search/${keyword}`);
     setTopicTitle('');
     console.log('search clicked');
@@ -28,6 +30,8 @@ const HeaderNav = () => {
         onClick={searchClick}
         keyword={keyword}
         setKeyword={setKeyword}
+        searchOpen={searchOpen || false}
+        toggleSearch={toggleSearch || (() => {}) }
       />
       <IconButton
         onClick={themeClick}

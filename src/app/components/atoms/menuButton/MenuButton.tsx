@@ -1,14 +1,13 @@
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import React, { useContext } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; //Menuアイコン
-import SideNav from '../../organisms/sideNav/SideNav';
 
 type MenuProps = {
-  isOpen: boolean;
+  menuOpen: boolean;
   toggleMenu: () => void;
 };
 
-const MenuButton = ({ isOpen, toggleMenu }: MenuProps) => {
+const MenuButton = ({ menuOpen, toggleMenu }: MenuProps) => {
   const { themeColor } = useContext(ThemeColorContext);
 
   let themeColorSelect;
@@ -27,13 +26,13 @@ const MenuButton = ({ isOpen, toggleMenu }: MenuProps) => {
 
   return (
     <>
-      <div className={`md:hidden ${isOpen ? 'hidden' : ''}`}>
+      <div className={`md:hidden ${menuOpen ? 'hidden' : ''}`}>
         <button onClick={toggleMenu} className="">
           <FaBars size={32} style={{ color: themeColorSelect }} />
         </button>
       </div>
       <div>
-        {isOpen && (
+        {menuOpen && (
           <div>
             <button onClick={toggleMenu} className="">
               <FaTimes size={32} style={{ color: themeColorSelect }} />

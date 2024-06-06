@@ -6,39 +6,70 @@ import { FaSearch } from 'react-icons/fa'; //Searchアイコン
 type IconProps = {
   onClick: () => void;
   keyword: string;
-  setKeyword: (keyword: string) => void
+  setKeyword: (keyword: string) => void;
+  searchOpen: boolean;
+  toggleSearch: () => void;
 };
 
-const SearchButton = ({ onClick, keyword, setKeyword }: IconProps) => {
+const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }: IconProps) => {
   const { themeColor } = useContext(ThemeColorContext);
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.target.value);
   };
 
+  const clickEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      onClick(); 
+    }
+  };
+
+  let bgColorSelect;
+  let textColorSelect;
   let themeColorSelect;
   switch (themeColor) {
     case 'light':
+      bgColorSelect = 'bg-white';
+      textColorSelect = 'text-black';
       themeColorSelect = '#454746';
       break;
     case 'dark':
+      bgColorSelect = 'bg-bgColor_darkTheme';
+      textColorSelect = 'text-white';
       themeColorSelect = 'C4C7C5';
       break;
     default:
+      bgColorSelect = 'bg-white';
+      textColorSelect = 'text-black';
       themeColorSelect = '#454746';
       break;
   }
 
   return (
     <div className="flex">
+      {/* <button onClick={toggleSearch} className="block md:hidden mx-2">
+        <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
+          <FaSearch data-testid="icon" />
+        </IconContext.Provider>
+      </button> */}
       <input
         type="input"
         value={keyword}
-        placeholder={"Search"}
+        placeholder={'Search'}
         onChange={onChangeSearch}
-        className="border rounded p-1"
+        onKeyDown={clickEnterKey}
+        className={`container md:block border rounded p-1 mx-2 ${bgColorSelect} ${textColorSelect}`}
       />
-      <button onClick={onClick} className="mx-2">
+      {/* {searchOpen && (
+        <input
+          type="input"
+          value={keyword}
+          placeholder={'Search'}
+          onChange={onChangeSearch}
+          className="block md:hidden border rounded p-1"
+        />
+      )} */}
+      <button onClick={onClick} className="hidden md:block mx-2">
         <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
           <FaSearch data-testid="icon" />
         </IconContext.Provider>
