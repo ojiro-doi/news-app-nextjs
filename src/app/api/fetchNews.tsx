@@ -1,6 +1,7 @@
 import axios  from 'axios';
+import Props from '../types/types';
 
-export const fetchNews= async ({topicTitle}: {topicTitle: string}) => {
+export const fetchNews= async ({topicTitle}:Props) => {
   let articleData = null;
   let category = topicTitle === "Headlines" ? "" : topicTitle;
 

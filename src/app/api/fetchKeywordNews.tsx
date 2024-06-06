@@ -1,14 +1,19 @@
 import axios  from 'axios';
+import Props from '../types/types';
 
-export const fetchLocalNews= async () => {
+export const fetchKeywordNews= async ({keyword}:Props) => {
   let articleData = null;
+  if(!keyword){
+    return articleData;
+  }
 
   try {
+    console.log('keyword',keyword);
     const response = await axios.get(
       "https://newsapi.org/v2/everything",
       {
         params: {
-          q:"関西",
+          q:keyword,
           sortBy: "popularity",
           apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
           pageSize: 5,
@@ -23,4 +28,4 @@ export const fetchLocalNews= async () => {
   return articleData;
 }
 
-export default fetchLocalNews;
+export default fetchKeywordNews;

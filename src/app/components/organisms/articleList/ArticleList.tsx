@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Props from '../../../types/types';
 import ArticleCard from '../../molecules/articleCard/ArticleCard';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
@@ -11,7 +11,7 @@ const ArticleList = ({ articles, title }: Props) => {
   let titleColorSelect;
   switch (themeColor) {
     case 'light':
-      bgColorSelect = 'bg-white';
+      bgColorSelect = 'bg-bgColor_lightTheme';
       textColorSelect = 'text-black';
       titleColorSelect='text-textColor_lightTheme'
       break;
@@ -21,7 +21,7 @@ const ArticleList = ({ articles, title }: Props) => {
       titleColorSelect='text-textColor_darkTheme'
       break;
     default:
-      bgColorSelect = 'bg-white';
+      bgColorSelect = 'bg-bgColor_lightTheme';
       textColorSelect = 'text-black';
       titleColorSelect='text-textColor_lightTheme'
       break;

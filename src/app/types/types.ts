@@ -8,6 +8,7 @@ type Article = {
 type Props = {
   articles?: Article[];
   localArticles?: Article[];
+  keywordArticle?: Article[];
   article?: Article;
   weather?: {
     current: {
@@ -43,7 +44,7 @@ type Props = {
   // onClick: () => void;
   path?: string;
   title?: string;
-  
+  keyword?: string;
 };
 
 export default Props;
