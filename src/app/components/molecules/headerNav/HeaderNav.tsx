@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import IconButton from '../../atoms/iconButton/IconButton';
+import ThemeButton from '../../atoms/themeButton/ThemeButton';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import { useRouter } from 'next/navigation';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
@@ -33,7 +33,7 @@ const HeaderNav = ({searchOpen,toggleSearch}:Props) => {
         searchOpen={searchOpen || false}
         toggleSearch={toggleSearch || (() => {}) }
       />
-      <IconButton
+      <ThemeButton
         onClick={themeClick}
       />
     </div>

@@ -1,5 +1,5 @@
 'use client';
-import React, { use, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import fetchNews from '../api/fetchNews';
 import fetchWeather from '../api/fetchWeather';
 import DefaultLayout from '../components/templates/DefaultLayout';
@@ -21,6 +21,7 @@ export default function Home() {
       setArticles(articleData);
       const localArticleData = await fetchLocalNews();
       setLocalArticles(localArticleData);
+      setKeyword('サッカー');
       const keywordArticleData = await fetchKeywordNews({ keyword });
       setKeywordArticles(keywordArticleData);
       const weatherData = await fetchWeather();

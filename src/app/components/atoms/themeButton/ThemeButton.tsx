@@ -1,7 +1,7 @@
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import React, { useContext } from 'react';
 import { IconContext } from 'react-icons';
-import { IoSunnyOutline } from "react-icons/io5";
+import { IoMdSunny } from "react-icons/io";
 import { IoMoon } from "react-icons/io5";
 
 
@@ -9,7 +9,7 @@ type IconProps = {
   onClick: () => void;
 };
 
-const IconButton = ({ onClick}: IconProps) => {
+const ThemeButton = ({ onClick}: IconProps) => {
   const {themeColor} = useContext(ThemeColorContext);
 
   let iconSelect, themeColorSelect;
@@ -20,7 +20,7 @@ const IconButton = ({ onClick}: IconProps) => {
           iconSelect = <IoMoon data-testid="icon" />;
           break;
         case 'dark':
-          iconSelect = <IoSunnyOutline data-testid="icon" />;
+          iconSelect = <IoMdSunny data-testid="icon" />;
           break;
         default:
           iconSelect = <IoMoon data-testid="icon" />;
@@ -47,4 +47,4 @@ const IconButton = ({ onClick}: IconProps) => {
   );
 };
 
-export default IconButton;
+export default ThemeButton;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
-import IconButton from '@/app/components/atoms/iconButton/IconButton';
+import ThemeButton from '@/app/components/atoms/themeButton/ThemeButton';
 
-describe('IconButton', () => {
+describe('ThemeButton', () => {
   it('should render the correct icon based on the icon prop', () => {
     const { rerender, getByTestId } = render(
       <ThemeColorContext.Provider value={{ themeColor: 'light', setThemeColor: () => {} }}>
-        <IconButton onClick={() => {}} icon="search" />
+        <ThemeButton onClick={() => {}}  />
       </ThemeColorContext.Provider>
     );
 
@@ -15,7 +15,7 @@ describe('IconButton', () => {
 
     rerender(
       <ThemeColorContext.Provider value={{ themeColor: 'light', setThemeColor: () => {} }}>
-        <IconButton onClick={() => {}} icon="theme" />
+        <ThemeButton onClick={() => {}}  />
       </ThemeColorContext.Provider>
     );
 
@@ -27,7 +27,7 @@ describe('IconButton', () => {
 
     const { getByRole } = render(
       <ThemeColorContext.Provider value={{ themeColor: 'light', setThemeColor: () => {} }}>
-        <IconButton onClick={onClick} icon="search" />
+        <ThemeButton onClick={onClick} />
       </ThemeColorContext.Provider>
     );
 

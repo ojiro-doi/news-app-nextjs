@@ -1,7 +1,7 @@
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import React, { useContext } from 'react';
 import { IconContext } from 'react-icons';
-import { FaSearch } from 'react-icons/fa'; //Searchアイコン
+import { IoSearch } from 'react-icons/io5';
 
 type IconProps = {
   onClick: () => void;
@@ -20,7 +20,7 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
 
   const clickEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      onClick(); 
+      onClick();
     }
   };
 
@@ -49,7 +49,7 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
     <div className="flex">
       {/* <button onClick={toggleSearch} className="block md:hidden mx-2">
         <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
-          <FaSearch data-testid="icon" />
+          <IoSearch data-testid="icon" />
         </IconContext.Provider>
       </button> */}
       <input
@@ -71,7 +71,7 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
       )} */}
       <button onClick={onClick} className="hidden md:block mx-2">
         <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
-          <FaSearch data-testid="icon" />
+          <IoSearch data-testid="icon" />
         </IconContext.Provider>
       </button>
     </div>
