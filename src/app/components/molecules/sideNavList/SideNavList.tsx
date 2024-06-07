@@ -1,5 +1,5 @@
 import React from 'react';
-import SideNavButton from '../../atoms/sideBarButton/SideBarButton';
+import SideNavButton from '../../atoms/sideNavButton/SideNavButton';
 
 const SideNavTopics = [
   {
