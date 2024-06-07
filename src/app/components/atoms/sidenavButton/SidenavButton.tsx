@@ -1,6 +1,6 @@
 import Props from '@/app/types/types';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import { IconContext } from 'react-icons';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
@@ -83,13 +83,12 @@ const SideNavButton = ({ path, title}: Props) => {
 
   return (
     <IconContext.Provider value={{ color: textColorSelect, size: '24' }}>
-      <button className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect} ${textColorSelect}`}>
-        <Link
-          href={`${path}`}
-          onClick={() => {
+      <button onClick={() => {
             setTopicTitle(title);
             console.log('setTopicTitle', setTopicTitle);
-          }}
+          }} className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect} ${textColorSelect}`}>
+        <Link
+          href={`${path}`}
         >
           <div className="flex items-center ml-6">
             {iconSelect}

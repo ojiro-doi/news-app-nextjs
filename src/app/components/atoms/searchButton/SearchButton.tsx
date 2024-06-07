@@ -15,6 +15,7 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
   const { themeColor } = useContext(ThemeColorContext);
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('onChangeSearch', e.target.value)
     setKeyword(e.target.value);
   };
 

@@ -14,7 +14,7 @@ const Topics = () => {
       setArticles(articleData);
     };
     fetchData();
-  }, []);
+  }, [topicTitle]);
 
   useEffect(() => {
     console.log('articles', articles);

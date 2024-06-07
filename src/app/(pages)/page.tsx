@@ -28,7 +28,7 @@ export default function Home() {
       setWeather(weatherData);
     };
     fetchData();
-  }, []);
+  }, [topicTitle, keyword]);
 
   useEffect(() => {
     console.log('articles', articles);
