@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const MenuButtonBase: Story = {
   args: {
-    isOpen: false,
+    menuOpen: false,
     toggleMenu: () => {},
   },
 };

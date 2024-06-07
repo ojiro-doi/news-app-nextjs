@@ -14,7 +14,6 @@ type Story = StoryObj<typeof meta>;
 export const ArticleCardBase: Story = {
   args: {
     article: {
-      author: '',
       title:
         '【第21回】まひろ(吉高由里子)と父・為時(岸谷五朗)は越前国へ！新たな出会いが | 大河ドラマ「光る君へ」| 2分ダイジェスト | NHK - NHK',
       url: 'https://www.youtube.com/watch?v=2y9RJ-VH7ak',
@@ -27,7 +26,6 @@ export const ArticleCardBase: Story = {
 export const ArticleCard2: Story = {
   args: {
     article: {
-      author: 'Hyonhee Shin',
       title: '日中韓首脳会合、中国首相「新たな始まり」 貿易などで共同宣言 - ロイター (Reuters Japan)',
       url: 'https://jp.reuters.com/world/china/WRK67HNNV5PA5KT6A5MDH2JAZI-2024-05-27/',
       urlToImage:
