@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import Header from '@/app/components/organisms/header/Header';
-import SideNav from '../components/organisms/sideNav/SideNav';
+import SideNav from '../components/organisms/sideNav/SideBar';
 
 
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {

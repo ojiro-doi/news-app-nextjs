@@ -1,4 +1,3 @@
-"use client";
 import React, { useContext } from 'react'
 import SideVavList from '../../molecules/sideNavList/SideNavList'
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import SideNav from './SideNav';
+import SideNav from './SideBar'
 
 /**
  * サイドナビゲーションのボタン
