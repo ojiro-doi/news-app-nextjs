@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import sideNavButton from './sideNavButton';
+import sideNavButton from './SideBarButton';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 
 describe('Test atoms sideNavButton', () => {
