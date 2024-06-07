@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React,{ useContext, useMemo } from 'react';
 import Props from '../../../types/types';
 import ArticleCard from '../../molecules/articleCard/ArticleCard';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';

@@ -1,7 +1,7 @@
 import ArticleList from '../organisms/articleList/ArticleList';
 import Props from '../../types/types';
 import SidePanel from '../organisms/sidePanel/SidePanel';
-import { useContext } from 'react';
+import React,{ useContext } from 'react';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 
 const DefaultLayout = ({ articles, localArticles, keywordArticle, keyword, weather }: Props) => {

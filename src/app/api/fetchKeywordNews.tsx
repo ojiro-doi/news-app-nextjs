@@ -16,7 +16,7 @@ export const fetchKeywordNews= async ({keyword}:Props) => {
         params: {
           q:keyword,
           sortBy: "popularity",
-          apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
+          apiKey: process.env.NEXT_PUBLIC_NEWS1_API_KEY,
           pageSize: 5,
         },
       }

@@ -10,8 +10,8 @@ export const fetchLocalNews= async () => {
         params: {
           q:"関西",
           sortBy: "publishedAt",
-          apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
-          pageSize: 5,
+          apiKey: process.env.NEXT_PUBLIC_NEWS1_API_KEY,
+          pageSize: 3,
         },
       }
     );

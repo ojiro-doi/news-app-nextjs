@@ -1,6 +1,6 @@
 'use client';
 import '@/styles/globals.css';
-import React, { use, useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import Header from '@/app/components/organisms/header/Header';
 import SideNav from '@/app/components/organisms/sideNav/SideNav';
@@ -51,7 +51,7 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
             <SideNav />
           </div>
         )}
-        <div className="">{children}</div>
+        <div>{children}</div>
       </main>
       <footer></footer>
     </body>

@@ -12,8 +12,8 @@ export const fetchNews= async ({topicTitle}:Props) => {
         params: {
           category: category,
           country: "jp",
-          apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
-          pageSize: 10,
+          apiKey: process.env.NEXT_PUBLIC_NEWS1_API_KEY,
+          pageSize: 5,
         },
       }
     );
