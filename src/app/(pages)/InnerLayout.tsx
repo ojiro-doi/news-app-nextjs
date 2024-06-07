@@ -3,7 +3,8 @@ import '@/styles/globals.css';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import Header from '@/app/components/organisms/header/Header';
-import SideNav from '@/app/components/organisms/sideNav/SideNav';
+import SideNav from '../components/organisms/sideNav/SideNav';
+
 
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   const { themeColor } = useContext(ThemeColorContext);

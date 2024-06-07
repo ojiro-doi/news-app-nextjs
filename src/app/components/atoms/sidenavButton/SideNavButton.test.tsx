@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import SideNavButton from './SideNavButton';
+import sideNavButton from './sideNavButton';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 
-describe('Test atoms SideNavButton', () => {
+describe('Test atoms sideNavButton', () => {
   it('renders a button with correct icon and title', () => {
-    render(<SideNavButton path="/" title="Headlines" />);
+    render(<sideNavButton path="/" title="Headlines" />);
 
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
@@ -20,7 +20,7 @@ it('onClick event', () => {
 
   render(
     <TopicTitleContext.Provider value={{ topicTitle: '', setTopicTitle: setTopicTitleMock }}>
-      <SideNavButton path="/" title="Headlines" />
+      <sideNavButton path="/" title="Headlines" />
     </TopicTitleContext.Provider>,
   );
 
