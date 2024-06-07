@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import SideNav from './SideBar';
+import SideNav from './SideNav';
 
 describe('Test SideNav', () => {
   it('renders SideNav', async () => {
