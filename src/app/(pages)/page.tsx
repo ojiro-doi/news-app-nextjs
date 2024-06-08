@@ -21,14 +21,13 @@ export default function Home() {
       setArticles(articleData);
       const localArticleData = await fetchLocalNews();
       setLocalArticles(localArticleData);
-      setKeyword('サッカー');
       const keywordArticleData = await fetchKeywordNews({ keyword });
       setKeywordArticles(keywordArticleData);
       const weatherData = await fetchWeather();
       setWeather(weatherData);
     };
     fetchData();
-  }, [topicTitle, keyword]);
+  }, []);
 
   useEffect(() => {
     console.log('articles', articles);

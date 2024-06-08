@@ -20,7 +20,8 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
   };
 
   const clickEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    //IMEの変換中はEnterキーで動作しない
+    if (e.key === 'Enter'&& !e.nativeEvent.isComposing) {
       onClick();
     }
   };

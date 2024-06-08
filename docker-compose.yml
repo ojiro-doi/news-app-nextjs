@@ -4,7 +4,6 @@ services:
   app:
     build:
       context: .
-    tty: true
     volumes:
       - .:/app
       - /app/node_modules
