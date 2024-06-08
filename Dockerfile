@@ -15,4 +15,4 @@ RUN npm install
 COPY . .
 
 # デフォルトコマンド
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
