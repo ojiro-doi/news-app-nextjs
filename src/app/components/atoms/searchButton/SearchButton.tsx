@@ -15,13 +15,13 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
   const { themeColor } = useContext(ThemeColorContext);
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('onChangeSearch', e.target.value)
+    console.log('onChangeSearch', e.target.value);
     setKeyword(e.target.value);
   };
 
   const clickEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     //IMEの変換中はEnterキーで動作しない
-    if (e.key === 'Enter'&& !e.nativeEvent.isComposing) {
+    if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
       onClick();
     }
   };
@@ -71,7 +71,7 @@ const SearchButton = ({ onClick, keyword, setKeyword, searchOpen, toggleSearch }
           className="block md:hidden border rounded p-1"
         />
       )} */}
-      <button onClick={onClick} className="hidden md:block mx-2">
+      <button onClick={onClick} className="hidden md:block mx-2" aria-label="検索">
         <IconContext.Provider value={{ color: themeColorSelect, size: '24' }}>
           <IoSearch data-testid="icon" />
         </IconContext.Provider>
