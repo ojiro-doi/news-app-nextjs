@@ -16,9 +16,9 @@ const Topics = () => {
     fetchData();
   }, [topicTitle]);
 
-  useEffect(() => {
-    console.log('articles', articles);
-  }, [articles]);
+  // useEffect(() => {
+  //   console.log('articles', articles);
+  // }, [articles]);
 
   return (
     <>

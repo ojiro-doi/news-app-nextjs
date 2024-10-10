@@ -29,21 +29,21 @@ export default function Home() {
     fetchData();
   }, [topicTitle, keyword]);
 
-  useEffect(() => {
-    console.log('articles', articles);
-  }, [articles]);
+  // useEffect(() => {
+  //   console.log('articles', articles);
+  // }, [articles]);
 
-  useEffect(() => {
-    console.log('localArticles', localArticles);
-  }, [localArticles]);
+  // useEffect(() => {
+  //   console.log('localArticles', localArticles);
+  // }, [localArticles]);
 
-  useEffect(() => {
-    console.log('keywordArticles', keywordArticles);
-  }, [keywordArticles]);
+  // useEffect(() => {
+  //   console.log('keywordArticles', keywordArticles);
+  // }, [keywordArticles]);
 
-  useEffect(() => {
-    console.log('weather', weather);
-  }, [weather]);
+  // useEffect(() => {
+  //   console.log('weather', weather);
+  // }, [weather]);
 
   return (
     <>

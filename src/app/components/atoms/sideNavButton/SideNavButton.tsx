@@ -1,6 +1,6 @@
 import Props from '@/app/types/types';
 import Link from 'next/link';
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import { IconContext } from 'react-icons';
 import { ThemeColorContext } from '@/contexts/ThemeColorContext';
@@ -10,7 +10,7 @@ import { MdOutlineScience } from 'react-icons/md'; //technology
 import { BiSlideshow } from 'react-icons/bi'; //entertainment
 import { MdDirectionsBike } from 'react-icons/md'; //sports
 
-const SideNavButton = ({ path, title}: Props) => {
+const SideNavButton = ({ path, title }: Props) => {
   const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
   const { themeColor } = useContext(ThemeColorContext);
 
@@ -83,13 +83,14 @@ const SideNavButton = ({ path, title}: Props) => {
 
   return (
     <IconContext.Provider value={{ color: textColorSelect, size: '24' }}>
-      <button onClick={() => {
-            setTopicTitle(title);
-            console.log('setTopicTitle', setTopicTitle);
-          }} className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect} ${textColorSelect}`}>
-        <Link
-          href={`${path}`}
-        >
+      <button
+        onClick={() => {
+          setTopicTitle(title);
+          // console.log('setTopicTitle', setTopicTitle);
+        }}
+        className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect} ${textColorSelect}`}
+      >
+        <Link href={`${path}`}>
           <div className="flex items-center ml-6">
             {iconSelect}
             <h1 className="ml-4 text-base">{title}</h1>
