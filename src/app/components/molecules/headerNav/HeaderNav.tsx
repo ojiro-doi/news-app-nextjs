@@ -6,36 +6,34 @@ import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import SearchButton from '../../atoms/searchButton/SearchButton';
 import Props from '@/app/types/types';
 
-const HeaderNav = ({searchOpen,toggleSearch}:Props) => {
+const HeaderNav = ({ searchOpen, toggleSearch }: Props) => {
   const [keyword, setKeyword] = useState('');
-  const {setTopicTitle} = useContext(TopicTitleContext);
-  const {themeColor,setThemeColor} = useContext(ThemeColorContext);
+  const { setTopicTitle } = useContext(TopicTitleContext);
+  const { themeColor, setThemeColor } = useContext(ThemeColorContext);
   const router = useRouter();
 
   const searchClick = () => {
     if (keyword === '') return;
     router.push(`/search/${keyword}`);
     setTopicTitle('');
-    console.log('search clicked');
-  }
+    // console.log('search clicked');
+  };
 
   const themeClick = () => {
     setThemeColor(themeColor === 'light' ? 'dark' : 'light');
-    console.log('theme clicked');
-  }
+    // console.log('theme clicked');
+  };
 
   return (
-    <div className='flex'>
+    <div className="flex">
       <SearchButton
         onClick={searchClick}
         keyword={keyword}
         setKeyword={setKeyword}
         searchOpen={searchOpen || false}
-        toggleSearch={toggleSearch || (() => {}) }
+        toggleSearch={toggleSearch || (() => {})}
       />
-      <ThemeButton
-        onClick={themeClick}
-      />
+      <ThemeButton onClick={themeClick} />
     </div>
   );
 };

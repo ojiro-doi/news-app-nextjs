@@ -7,20 +7,20 @@ import { useParams } from 'next/navigation';
 const Search = () => {
   const { keyword: encodedKeyword } = useParams();
   const keyword = decodeURIComponent(encodedKeyword as string);
-  console.log('params', keyword);
+  // console.log('params', keyword);
 
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const articleData = await fetchKeywordNews({keyword});
+      const articleData = await fetchKeywordNews({ keyword });
       setArticles(articleData);
     };
     fetchData();
   }, [keyword]);
 
   useEffect(() => {
-    console.log('articles', articles);
+    // console.log('articles', articles);
   }, [articles]);
 
   return (

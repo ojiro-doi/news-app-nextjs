@@ -5,7 +5,6 @@ import { ThemeColorContext } from '@/contexts/ThemeColorContext';
 import Header from '@/app/components/organisms/header/Header';
 import SideNav from '@/app/components/organisms/sideNav/SideNav';
 
-
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   const { themeColor } = useContext(ThemeColorContext);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,13 +16,13 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
     setSearchOpen(!searchOpen);
   }, [searchOpen]);
 
-  useEffect(() => {
-    console.log('searchOpen:', searchOpen);
-  } ,[searchOpen]);
+  // useEffect(() => {
+  //   console.log('searchOpen:', searchOpen);
+  // } ,[searchOpen]);
 
-  useEffect(() => {
-    console.log('menuOpen:', menuOpen);
-  } ,[menuOpen]);
+  // useEffect(() => {
+  //   console.log('menuOpen:', menuOpen);
+  // } ,[menuOpen]);
 
   let bgColorSelect;
   switch (themeColor) {
@@ -41,7 +40,7 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <body className={`h-full ${bgColorSelect}`}>
       <header className="fixed top-0 w-full">
-        <Header menuOpen={menuOpen} toggleMenu={toggleMenu}  toggleSearch={toggleSearch}/>
+        <Header menuOpen={menuOpen} toggleMenu={toggleMenu} toggleSearch={toggleSearch} />
       </header>
       <main className="pt-16">
         <div className="hidden md:block md:fixed top-16 ">
