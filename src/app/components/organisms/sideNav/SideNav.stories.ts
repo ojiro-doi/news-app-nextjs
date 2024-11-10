@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import SideNav from './SideNav'
+import SideNav from './SideNav';
 
 /**
  * サイドナビゲーションのボタン
@@ -14,9 +14,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const SideNavBase: Story = {
-  args: {
-    path: '/topics/sports',
-    title: 'Sports',
-  },
-};
+export const SideNavBase: Story = {};
