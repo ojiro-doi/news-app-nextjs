@@ -1,56 +1,27 @@
-'use client';
 import React, { useContext, useEffect, useState } from 'react';
 import fetchNews from '../api/fetchNews';
 import fetchWeather from '../api/fetchWeather';
 import DefaultLayout from '../components/templates/DefaultLayout';
-import { TopicTitleContext } from '@/contexts/TopicTitleContext';
 import fetchLocalNews from '../api/fetchLocalNews';
 import fetchKeywordNews from '../api/fetchKeywordNews';
 
-export default function Home() {
-  const { topicTitle, setTopicTitle } = useContext(TopicTitleContext);
-  const [articles, setArticles] = useState([]);
-  const [localArticles, setLocalArticles] = useState([]);
-  const [keyword, setKeyword] = useState('サッカー');
-  const [keywordArticles, setKeywordArticles] = useState([]);
-  const [weather, setWeather] = useState();
+export default async function Home() {
+  const keyword: string = 'サッカー';
+  const topicTitle: string = 'Headlines';
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const articleData = await fetchNews({ topicTitle });
-      setArticles(articleData);
-      const localArticleData = await fetchLocalNews();
-      setLocalArticles(localArticleData);
-      const keywordArticleData = await fetchKeywordNews({ keyword });
-      setKeywordArticles(keywordArticleData);
-      const weatherData = await fetchWeather();
-      setWeather(weatherData);
-    };
-    fetchData();
-  }, [topicTitle, keyword]);
-
-  // useEffect(() => {
-  //   console.log('articles', articles);
-  // }, [articles]);
-
-  // useEffect(() => {
-  //   console.log('localArticles', localArticles);
-  // }, [localArticles]);
-
-  // useEffect(() => {
-  //   console.log('keywordArticles', keywordArticles);
-  // }, [keywordArticles]);
-
-  // useEffect(() => {
-  //   console.log('weather', weather);
-  // }, [weather]);
+  const [articles, localArticles, keywordArticles, weather] = await Promise.all([
+    fetchNews({ topicTitle }),
+    fetchLocalNews(),
+    fetchKeywordNews({ keyword }),
+    fetchWeather(),
+  ]);
 
   return (
     <>
       <DefaultLayout
         articles={articles}
         localArticles={localArticles}
-        keywordArticle={keywordArticles}
+        keywordArticles={keywordArticles}
         keyword={keyword}
         weather={weather}
       />
