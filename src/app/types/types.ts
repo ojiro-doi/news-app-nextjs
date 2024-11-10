@@ -8,7 +8,7 @@ type Article = {
 type Props = {
   articles?: Article[];
   localArticles?: Article[];
-  keywordArticle?: Article[];
+  keywordArticles?: Article[];
   article?: Article;
   weather?: {
     current: {
