@@ -3,7 +3,12 @@ import Props from '../types/types';
 
 export const fetchNews = async ({ topicTitle }: Props) => {
   let articleData = null;
-  let category = topicTitle === 'Headlines' ? '' : topicTitle;
+  let category;
+  if (topicTitle === 'Headlines') {
+    category = '';
+  } else {
+    category = topicTitle;
+  }
 
   try {
     const response = await axios.get('https://newsapi.org/v2/top-headlines', {
