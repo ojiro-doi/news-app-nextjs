@@ -1,18 +1,22 @@
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import Props from '../../../types/types';
 
 const ArticleCard = ({ article, themeColor }: Props) => {
   if (!article) {
     return null;
   }
+
+  dayjs.extend(relativeTime);
+
   const time =
-    moment(article.publishedAt || moment.now())
-      .fromNow()
-      .slice(0, 1) == 'a'
+    dayjs()
+      .to(dayjs(article.publishedAt || Date.now()))
+      .slice(0, 1) === 'a'
       ? 1
-      : moment(article.publishedAt || moment.now())
-          .fromNow()
+      : dayjs()
+          .to(dayjs(article.publishedAt || Date.now()))
           .slice(0, 1);
 
   let bgColorSelect;
@@ -22,17 +26,17 @@ const ArticleCard = ({ article, themeColor }: Props) => {
     case 'light':
       bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
-      borderColorSelect='border-textColor_lightTheme'
+      borderColorSelect = 'border-textColor_lightTheme';
       break;
     case 'dark':
       bgColorSelect = 'bg-black';
       textColorSelect = 'text-white';
-      borderColorSelect='border-textColor_darkTheme'
+      borderColorSelect = 'border-textColor_darkTheme';
       break;
     default:
       bgColorSelect = 'bg-white';
       textColorSelect = 'text-black';
-      borderColorSelect='border-textColor_lightTheme'
+      borderColorSelect = 'border-textColor_lightTheme';
       break;
   }
 

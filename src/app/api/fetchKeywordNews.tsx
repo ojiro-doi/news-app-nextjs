@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Props from '../types/types';
-import { lang } from 'moment';
 
 export const fetchKeywordNews = async ({ keyword }: Props) => {
   let articleData = null;
