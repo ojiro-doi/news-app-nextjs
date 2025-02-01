@@ -86,11 +86,10 @@ const SideNavButton = ({ path, title }: Props) => {
       <button
         onClick={() => {
           setTopicTitle(title);
-          // console.log('setTopicTitle', setTopicTitle);
         }}
         className={`${bgColorSelect} w-64 h-16 rounded-full ${hoverColorSelect} ${textColorSelect}`}
       >
-        <Link href={`${path}`}>
+        <Link href={`${path}`} tabIndex={-1}>
           <div className="flex items-center ml-6">
             {iconSelect}
             <h1 className="ml-4 text-base">{title}</h1>
